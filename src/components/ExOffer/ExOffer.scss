@@ -1,0 +1,33 @@
+.ExOffer {
+    padding: 150px 0;
+
+    .container {
+        max-width: 1158px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .text__ExOffer {
+            max-width: 620px;
+            font-family: "Times New Roman";
+            text-align: center;
+
+            h2 {
+                color: #202020;
+                font-weight: bold;
+                font-size: 45px;
+                margin-bottom: 40px;
+            }
+
+            p {
+                color: #969696;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .collage-image {
+            max-width: 100%;
+        }
+    }
+}

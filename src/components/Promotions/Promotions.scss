@@ -1,0 +1,48 @@
+.Promotions {
+    margin-top: 150px;
+
+    .container {
+        max-width: 1420px;
+
+        .item__Promotions {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+
+            .image {
+                flex-basis: 50%;
+                
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .item-content {
+                display: flex;
+                flex-direction: column;
+                font-family: "Times New Roman";
+                text-align: center;
+                padding: 20px;
+                margin: 0 auto;
+
+                h3 {
+                    color: #202020;
+                    font-size: 35px;
+                    margin-bottom: 40px;
+                }
+
+                p {
+                    color: #969696;
+                    line-height: 155%;
+                    max-width: 476px;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .reversed {
+            flex-direction: row-reverse;
+        }
+    }
+}

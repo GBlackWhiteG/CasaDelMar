@@ -1,0 +1,30 @@
+.About {
+    padding-top: 150px;
+
+    .container {
+        max-width: 1158px;
+        font-family: "Times New Roman";
+        text-align: center;
+
+        .title {
+            color: #202020;
+            font-weight: bold;
+            font-size: 45px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            color: #969696;
+            line-height: 155%;
+        }
+
+        .sign {
+            display: block;
+            color: #202020;
+            font-family: "Lobster Two";
+            font-style: italic;
+            font-size: 30px;
+            margin-top: 15px;
+        }
+    }
+}

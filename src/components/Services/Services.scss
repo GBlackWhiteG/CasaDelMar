@@ -1,0 +1,65 @@
+.Services {
+    margin-top: 150px;
+
+    .container {
+        max-width: 1420px;
+        font-family: "Times New Roman";
+
+        h2 {
+            color: #202020;
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .images__Services {
+            display: flex;
+            gap: 10px;
+
+            .eat, .events, .where {
+                position: relative;
+            }
+
+            .eat>img, .events>img, .where>img {
+                max-width: 100%;
+            } 
+
+            .eat::before, .events::before, .where::before {
+                color: #ffffff;
+                width: 100%;
+                text-align: center;
+                font-size: 25px;
+                font-weight: normal;
+                font-style: italic;
+                background-color: rgba(0, 0, 0, 0.60);
+                padding: 20px 0;
+                position: absolute;
+                bottom: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .eat::before {
+                content: "Ешь и развлекайся";
+            }
+
+            .events::before {
+                content: "Планировать мероприятия";
+            }
+
+            .where::before {
+                content: "Где мы процветаем";
+            }
+        }
+
+        p {
+            color: #969696;
+            max-width: 1158px;
+            font-size: 16px;
+            line-height: 155%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+    }
+}

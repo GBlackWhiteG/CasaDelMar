@@ -1,0 +1,50 @@
+.Header {
+    margin-top: 115px;
+
+    .container {
+        max-width: 1920px;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+
+        .video {
+            width: 100vw;
+            max-width: 1920px;
+        }
+
+        .title-block {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .title {
+                color: #ffffff;
+                font-family: 'Myriad Pro';
+                font-weight: bold;
+                font-size: 150px;
+                text-align: center;
+                position: relative;
+            }
+
+            .title::before, .title::after {
+                font-family: "Lobster Two";
+                font-weight: normal;
+                font-size: 50px;
+                position: absolute;
+            }
+
+            .title::before {
+                content: "Santa Monica";
+                transform: translate(0%, -35%);
+            }
+            
+            .title::after {
+                content: "California";
+                transform: translate(-100%, -35%);
+            }
+        }
+    }
+}

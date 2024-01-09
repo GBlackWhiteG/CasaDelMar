@@ -1,0 +1,66 @@
+.Rooms {
+    background-color: #ffffff;
+
+    .container {
+        max-width: 1920px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 45px;
+        padding: 0;
+        padding-right: 30px;
+
+        .big-image__Rooms {
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                max-width: 1167px;
+            }
+            
+            .Button {
+                position: absolute;
+                bottom: 5.3%;
+                right: 6.6%;
+            }
+        }
+
+        .content__Rooms {
+            h2 {
+                color: #202020;
+                font-family: "Times New Roman";
+                font-size: 50px;
+                margin-bottom: 40px;
+            }
+
+            .rooms-block {
+                list-style: none;
+                height: 20vw;
+                max-height: 378px;
+                overflow: auto;
+
+                .room {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding: 10px;
+
+                    img {
+                        max-width: 189px;
+
+                        @media (max-width: 1520px) {
+                            max-width: 134px;
+                        }
+                    }
+
+                    p {
+                        font-family: "Myriad Pro";
+                        font-size: 20px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}

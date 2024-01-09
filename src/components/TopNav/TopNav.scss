@@ -1,0 +1,28 @@
+.TopNav {
+    position: fixed;
+    background-color: #ffffff;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1158px;
+        position: relative;
+
+        p {
+            font-family: "Myriad Pro";
+            font-weight: normal;
+            font-size: 16px;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            max-width: 110px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 4px);
+        }
+    }
+}
