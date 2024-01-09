@@ -1,8 +1,8 @@
 import './Button.scss';
 
-const Button = ({text}) => {
+const Button = ({text, func = null}) => {
   return (
-    <div className='Button'>
+    <div className='Button' onClick={func}>
       <span>{text}</span>
     </div>
   );

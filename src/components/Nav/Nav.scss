@@ -3,12 +3,14 @@
     background-color: #ffffff;
     top: 58px;
     width: 100%;
+    transition: .3s;
     z-index: 1;
 
     .container {
         max-width: 1158px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         p {
             font-family: "Myriad pro";
@@ -18,7 +20,17 @@
         }
 
         .text-logo {
+            font-size: 20px;
+            opacity: 1;
+            transition: .3s;
+        }
+
+        .hidden-text-logo {
             opacity: 0;
         }
     }
+}
+
+.hidden-nav {
+    top: 0;
 }

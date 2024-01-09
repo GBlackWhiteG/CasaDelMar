@@ -1,7 +1,8 @@
 .TopNav {
     position: fixed;
-    background-color: #ffffff;
     width: 100%;
+    background-color: #ffffff;
+    transition: .3s;
     top: 0;
     z-index: 2;
 
@@ -23,6 +24,16 @@
             position: absolute;
             left: 50%;
             transform: translate(-50%, 4px);
+            opacity: 1;
+            transition: .3s;
+        }
+
+        .hidden-logo {
+            opacity: 0;
         }
     }
+}
+
+.hidden {
+    top: -58px;
 }
