@@ -1,17 +1,14 @@
 .Button {
     display: inline-block;
-    transition: .3s;
-    background-color: #3C6F84;
+    color: #ffffff;
+    font-family: "Myriad Pro";
+    font-weight: bold;
+    font-size: clamp(16px, 1.5vw, 20px);
+    text-decoration: none;
     cursor: pointer;
-
-    span {
-        display: block;
-        color: #ffffff;
-        font-family: "Myriad Pro";
-        font-weight: bold;
-        font-size: clamp(16px, 1.5vw, 20px);
-        padding: 0.7em 1.35em;
-    }
+    background-color: #3C6F84;
+    transition: .3s;
+    padding: 0.7em 1.35em;
 }
 
 .Button:hover {

@@ -1,5 +1,5 @@
 import './Header.scss';
-import main_video from '../../media/Casa_Del_Mar.mp4';
+import main_video from '../../../../media/Casa_Del_Mar.mp4';
 
 const Header = () => {
   return (

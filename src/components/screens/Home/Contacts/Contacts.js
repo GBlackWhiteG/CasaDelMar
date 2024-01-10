@@ -1,6 +1,6 @@
 import './Contacts.scss';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
-import back from '../../media/contacts-picture.png'
+import back from '../../../../media/contacts-picture.png'
 
 const Contacts = () => {
   return (

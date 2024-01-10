@@ -25,19 +25,28 @@ const Nav = () => {
       });
 
     return (
-        <nav className={windowTop ? 'Nav' : 'Nav hidden-nav'}>
-            <div className='container'>
-                <div className={isNavOpen ? 'nav-items' : 'nav-items nav-show'}>
-                    <img src={logo} className='logo' alt='logo'/>
-                    <p>Текст</p>
-                    <p>Текст</p>
-                    <span className={windowTop ? 'text-logo hidden-text-logo' : 'text-logo'}>Casa del Mar</span>
-                    <p>Текст</p>
-                    <p>Текст</p>
+        <>
+            <nav className={windowTop ? 'Nav' : 'Nav hidden-nav'}>
+                <div className='container'>
+                    <div className="nav-items">
+                        <div className='top-nav'>
+                            <p>Текст</p>
+                            <img src={logo} className={windowTop ? "big-logo" : "big-logo hidden-big-logo"} alt='' />
+                            <p>Текст</p>
+                        </div>
+                        <div className={isNavOpen ? 'bottom-nav' : 'bottom-nav nav-show'}>
+                            <img src={logo} className='logo' alt='logo'/>
+                            <p>Текст</p>
+                            <p>Текст</p>
+                            <span className={windowTop ? 'text-logo hidden-logo' : 'text-logo'}>Casa del Mar</span>
+                            <p>Текст</p>
+                            <p>Текст</p>
+                        </div>
+                    </div>
+                    <div className='burger-block' onClick={changeButton} ><span className={isNavOpen ? 'burger' : 'burger close-button'} /></div>
                 </div>
-                <div className='burger-block' onClick={changeButton} ><span className={isNavOpen ? 'burger' : 'burger close-button'} /></div>
-            </div>
-        </nav>
+            </nav>
+        </>
     );
 }
 

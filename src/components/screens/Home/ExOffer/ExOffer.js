@@ -1,6 +1,6 @@
 import './ExOffer.scss';
-import collage from "../../media/pictures-collage.png";
-import Button from "../ui/Button/Button";
+import collage from "../../../../media/pictures-collage.png";
+import Button from "../../../ui/Button/Button";
 
 const ExOffer = () => {
   return (

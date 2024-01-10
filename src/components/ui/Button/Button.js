@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
 import './Button.scss';
 
-const Button = ({text, func = null}) => {
+const Button = ({text, link = '/'}) => {
+
   return (
-    <div className='Button' onClick={func}>
-      <span>{text}</span>
-    </div>
+    <Link to={link} className='Button'>
+      {text}
+    </Link>
   );
 }
 

@@ -1,7 +1,7 @@
 import './Promotions.scss';
-import back from '../../media/back.jpg';
-import beach from '../../media/beach.jpg';
-import tables from '../../media/tables.jpg'
+import back from '../../../../media/back.jpg';
+import beach from '../../../../media/beach.jpg';
+import tables from '../../../../media/tables.jpg'
 
 const Promotions = () => {
   return (

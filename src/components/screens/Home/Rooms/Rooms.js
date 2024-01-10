@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Rooms.scss';
-import Button from "../ui/Button/Button"
+import Button from "../../../ui/Button/Button"
 import roomsPictures from './importPictures';
 
 const roomsNames = ["Делюкс номер","Люкс с видом на тихий океан", "Улучшенный номер", "Люкс «Санта-Моника»",
@@ -18,7 +19,7 @@ const Rooms = () => {
       <div className='container'>
         <div className='big-image__Rooms'>
           <img src={roomsPictures[bigImage]} alt=''/>
-          <Button text="Подробнее" func={() => console.log(bigImage)}/>
+          <Button text="Подробнее" link={`room/${bigImage}`} />
         </div>
         <div className='content__Rooms'>
           <h2>Комнаты</h2>

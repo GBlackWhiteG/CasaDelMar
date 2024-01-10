@@ -1,7 +1,7 @@
 import './Services.scss';
-import eat from "../../media/eat.jpg";
-import events from "../../media/events.jpg";
-import where from "../../media/where-are-we.jpg";
+import eat from "../../../../media/eat.jpg";
+import events from "../../../../media/events.jpg";
+import where from "../../../../media/where-are-we.jpg";
 
 const Services = () => {
   return (
