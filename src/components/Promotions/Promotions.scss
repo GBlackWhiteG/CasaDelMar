@@ -1,5 +1,5 @@
 .Promotions {
-    margin-top: 150px;
+    padding-top: clamp(50px, 10vw, 150px);
 
     .container {
         max-width: 1158px;
@@ -11,38 +11,74 @@
 
             .image {
                 flex-basis: 50%;
+                object-fit: cover;
                 
                 img {
+                    height: 100%;
                     max-width: 100%;
                 }
             }
 
             .item-content {
-                display: flex;
-                flex-direction: column;
-                font-family: "Times New Roman";
-                text-align: center;
-                padding: 20px;
-                margin: 0 auto;
+                flex-basis: 50%;
 
-                h3 {
-                    color: #202020;
-                    font-size: 35px;
-                    margin-bottom: 40px;
-                }
-
-                p {
-                    color: #969696;
-                    line-height: 155%;
-                    max-width: 476px;
+                .item-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: "Times New Roman";
+                    text-align: center;
+                    padding: 20px;
                     margin: 0 auto;
-                    margin-bottom: 20px;
+
+                    h3 {
+                        color: #202020;
+                        font-size: clamp(20px, 3vw, 35px);
+                        margin-bottom: 1.15em;
+                    }
+
+                    p {
+                        color: #969696;
+                        max-width: 476px;
+                        font-size: clamp(12px, 1.5vw, 16px);
+                        line-height: 155%;
+                        margin: 0 auto;
+                        margin-bottom: 20px;
+                    }
+
+                    @media (max-width: 700px) {
+                        p:nth-child(2) {
+                            display: none;
+                        }
+                    }
                 }
+            }
+
+            @media (max-width: 550px) {
+                flex-direction: column;
             }
         }
 
         .reversed {
             flex-direction: row-reverse;
+
+            @media (max-width: 550px) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .mobile-warning {
+        display: none;
+        color: #969696;
+        font-family: "Times New Roman";
+        font-size: clamp(12px, 1.5vw, 16px);
+        line-height: 155%;
+        text-align: center;
+        padding: 0 20px;
+        margin-top: 1.9em;
+
+        @media (max-width: 768px) {
+            display: block;
         }
     }
 }

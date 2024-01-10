@@ -1,17 +1,19 @@
 import './Contacts.scss';
-import { YMaps, Map } from '@pbe/react-yandex-maps';
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import back from '../../media/contacts-picture.png'
 
 const Contacts = () => {
   return (
     <section className='Contacts'>
       <div className='container'>
-        <img src={back}/>
+        <div className='image-wrapper'><img src={back}/></div>
         <div className='container__Contacts'>
-          <div className='test'>
+          <div className='wrapper__Contacts'>
             <div className='block__Contacts'>
               <YMaps>
-                <Map className="map" defaultState={{ center: [56.846763, 60.615923], zoom: 16 }} />
+                <Map className="map" defaultState={{ center: [34.006716, -118.490716], zoom: 16 }} >
+                  <Placemark defaultGeometry={[34.006716, -118.490716]} />
+                </Map>
               </YMaps>
               <div className='content__Contacts'>
                 <h2>Контакты</h2>

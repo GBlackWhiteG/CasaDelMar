@@ -1,13 +1,25 @@
 .Button {
     display: inline-block;
-    padding: 14px 27px;
+    transition: .3s;
     background-color: #3C6F84;
     cursor: pointer;
 
     span {
+        display: block;
         color: #ffffff;
         font-family: "Myriad Pro";
         font-weight: bold;
-        font-size: 20px;
+        font-size: clamp(16px, 1.5vw, 20px);
+        padding: 0.7em 1.35em;
     }
+}
+
+.Button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }

@@ -23,7 +23,7 @@ const TopNav = () => {
     <div className={windowTop ? "TopNav" : "TopNav hidden"}>
       <div className="container">
         <p>Текст</p>
-        <img src={logo} className={windowTop ? "logo" : "logo hidden-logo"} alt='' />
+        <img src={logo} className={windowTop ? "logo" : "hidden-logo"} alt='' />
         <p>Текст</p>
       </div>
     </div>

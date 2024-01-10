@@ -1,5 +1,5 @@
 .Services {
-    margin-top: 150px;
+    padding-top: clamp(50px, 10vw, 150px);
 
     .container {
         max-width: 1420px;
@@ -7,59 +7,130 @@
 
         h2 {
             color: #202020;
-            font-size: 45px;
+            font-size: clamp(25px, 3vw, 45px);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 0.9em;
         }
 
-        .images__Services {
+        .items__Services {
             display: flex;
             gap: 10px;
 
-            .eat, .events, .where {
+            .item__Services {
+                overflow: hidden;
                 position: relative;
+
+                >img {
+                    max-width: 100%;
+                    height: 100%;
+                    transition: .3s;
+                }
+
+                .item-bg {
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.60);
+                    position: absolute;
+                    top: 0;
+                    transform: translateY(83%);
+                    transition: .3s;
+                }
+
+                .item-wrapper {
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(38%);
+                    transition: .3s;
+
+                    h4 {
+                        color: #ffffff;
+                        text-align: center;
+                        font-size: clamp(12px, 1.5vw, 25px);
+                        font-weight: normal;
+                        font-style: italic;
+                        margin-bottom: 1em;
+                        transition: .3s;
+                    }    
+
+                    p {
+                        max-height: 130px;
+                        display: -webkit-box;
+                        color: #ffffff;
+                        font-size: clamp(10px, 1.5vw, 16px);
+                        white-space: wrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        margin: 0 2.4em;
+                        margin-top: 0;
+                        opacity: 0;
+                        transition: .3s;
+
+                        @media (max-width: 1350px) {
+                            -webkit-line-clamp: 3;
+                        }
+                    }
+
+                    .more-button {
+                        display: block;
+                        color: #ffffff;
+                        font-size: clamp(12px, 1.5vw, 18px);
+                        text-decoration: underline;
+                        text-align: center;
+                        cursor: pointer;
+                        margin-top: 1.2em;
+                        opacity: 0;
+                        transition: .3s;
+                    }
+                }
             }
 
-            .eat>img, .events>img, .where>img {
-                max-width: 100%;
-            } 
+            .item__Services:hover {
+                img {
+                    filter: brightness(40%);
+                }
 
-            .eat::before, .events::before, .where::before {
-                color: #ffffff;
-                width: 100%;
-                text-align: center;
-                font-size: 25px;
-                font-weight: normal;
-                font-style: italic;
-                background-color: rgba(0, 0, 0, 0.60);
-                padding: 20px 0;
-                position: absolute;
-                bottom: 5px;
-                left: 50%;
-                transform: translateX(-50%);
+                .item-bg {
+                    transform: translateY(0%)
+                }
+
+                .item-wrapper {
+                    height: 50%;
+                    transform: translateY(-50%);
+    
+                    p, .more-button {
+                        opacity: 1;
+                    }
+                }
             }
 
-            .eat::before {
-                content: "Ешь и развлекайся";
-            }
+            @media (max-width: 560px) {
+                flex-direction: column;
 
-            .events::before {
-                content: "Планировать мероприятия";
+                .item__Services {
+                    .item-wrapper {
+                        h4 {
+                            font-size: clamp(12px, 5vw, 20px);
+                        }
+                    }
+                }
             }
+        }
 
-            .where::before {
-                content: "Где мы процветаем";
-            }
+        @media (max-width: 560px) {
+            max-width: 350px;
         }
 
         p {
             color: #969696;
             max-width: 1158px;
-            font-size: 16px;
+            font-size: clamp(12px, 1.5vw, 16px);
             line-height: 155%;
             text-align: center;
             margin: 0 auto;
-            margin-top: 30px;
+            margin-top: 1.9em;
         }
     }
 }

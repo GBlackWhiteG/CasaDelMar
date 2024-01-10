@@ -1,20 +1,22 @@
 .About {
-    padding-top: 150px;
+    padding-top: clamp(50px, 10vw, 150px);
 
     .container {
         max-width: 1158px;
         font-family: "Times New Roman";
         text-align: center;
+        padding: 0 80px;
 
         .title {
             color: #202020;
             font-weight: bold;
-            font-size: 45px;
-            margin-bottom: 40px;
+            font-size: clamp(25px, 3vw, 45px);
+            margin-bottom: 0.9em;
         }
 
         p {
             color: #969696;
+            font-size: clamp(12px, 1.5vw, 16px);
             line-height: 155%;
         }
 
@@ -23,8 +25,12 @@
             color: #202020;
             font-family: "Lobster Two";
             font-style: italic;
-            font-size: 30px;
+            font-size: clamp(18px, 2vw, 30px);
             margin-top: 15px;
+        }
+
+        @media (max-width: 450px) {
+            padding: 0 40px;
         }
     }
 }

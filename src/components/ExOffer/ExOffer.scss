@@ -1,33 +1,44 @@
 .ExOffer {
-    padding: 150px 0;
+    padding: clamp(50px, 10vw, 150px) 0;
 
     .container {
         max-width: 1158px;
         display: flex;
         justify-content: space-between;
+        gap: 20px;
         align-items: center;
 
         .text__ExOffer {
             max-width: 620px;
+            flex-basis: 75%;
             font-family: "Times New Roman";
             text-align: center;
 
             h2 {
                 color: #202020;
                 font-weight: bold;
-                font-size: 45px;
-                margin-bottom: 40px;
+                font-size: clamp(25px, 3vw, 45px);
+                margin-bottom: 0.9em;
             }
 
             p {
                 color: #969696;
-                font-size: 16px;
+                font-size: clamp(12px, 1.5vw, 16px);
+                line-height: 155%;
                 margin-bottom: 20px;
             }
         }
 
         .collage-image {
             max-width: 100%;
+
+            @media (max-width: 450px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 450px) {
+            justify-content: center;
         }
     }
 }

@@ -1,5 +1,5 @@
 .Header {
-    margin-top: 115px;
+    padding-top: 115px;
 
     .container {
         max-width: 1920px;
@@ -24,7 +24,7 @@
                 color: #ffffff;
                 font-family: 'Myriad Pro';
                 font-weight: bold;
-                font-size: 150px;
+                font-size: clamp(60px, 8vw, 150px);
                 text-align: center;
                 position: relative;
             }
@@ -32,7 +32,7 @@
             .title::before, .title::after {
                 font-family: "Lobster Two";
                 font-weight: normal;
-                font-size: 50px;
+                font-size: clamp(25px, 3vw, 50px);
                 position: absolute;
             }
 
@@ -46,5 +46,16 @@
                 transform: translate(-100%, -35%);
             }
         }
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 0px;
+
+        .container {
+
+            .video {
+                width: auto;
+            }
+        }   
     }
 }

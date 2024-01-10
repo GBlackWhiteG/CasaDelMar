@@ -8,6 +8,6 @@ import penthous from "../../media/rooms/penthous-lux.jpg";
 import upgraded from "../../media/rooms/upgraded.jpg";
 import view from "../../media/rooms/view.jpg"; 
 
-const roomsPictures = [delux, halfView, kingSize, luxSantaMonica, luxView, palm, penthous, upgraded, view];
+const roomsPictures = [delux, luxView, kingSize, luxSantaMonica, halfView, palm, penthous, upgraded, view];
 
 export default roomsPictures;

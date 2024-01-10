@@ -3,15 +3,15 @@ import './Rooms.scss';
 import Button from "../ui/Button/Button"
 import roomsPictures from './importPictures';
 
-const roomsNames = ["Делюкс номер", "Номер с частичным видом на океан", "Улучшенный номер", "Люкс «Санта-Моника»",
-                    "Люкс с видом на тихий океан", "Номер «Пальмовая терраса»", "Пентхаус-люкс", "Номер с кроватью «King-Size»", "Номер с видом на океан"];
+const roomsNames = ["Делюкс номер","Люкс с видом на тихий океан", "Улучшенный номер", "Люкс «Санта-Моника»",
+                    "Номер с частичным видом на океан", "Номер «Пальмовая терраса»", "Пентхаус-люкс", "Номер с кроватью «King-Size»", "Номер с видом на океан"];
 
 const Rooms = () => {
   const setBigImage = (i) => {
     setImage(i);
   }
 
-  const [bigImage, setImage] = useState(0);
+  const [bigImage, setImage] = useState(1);
 
   return (
     <section className='Rooms'>
@@ -24,7 +24,7 @@ const Rooms = () => {
           <h2>Комнаты</h2>
           <ul className='rooms-block'>
             {roomsPictures.map((image, index) => (
-              <li key={index} className='room' onClick={() => setBigImage(index)}>
+              <li key={index} className={bigImage != index ? "room" : "room active"} onClick={() => setBigImage(index)}>
                 <img src={image} alt='' />
                 <p>{roomsNames[index]}</p>
               </li>

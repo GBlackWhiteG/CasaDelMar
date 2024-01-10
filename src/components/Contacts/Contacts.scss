@@ -5,9 +5,20 @@
         max-width: 1920px;
         padding: 0;
 
-        img {
-            max-width: 100%;
+        .image-wrapper {
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                max-width: 100%;
+
+                @media (max-width: 830px) {
+                    max-width: 830px;
+                    max-height: 410px;
+                }
+            }
         }
+            
 
         .container__Contacts {
             height: 50px;
@@ -15,7 +26,7 @@
             margin: 0 auto;
             position: relative;
 
-            .test {
+            .wrapper__Contacts {
                 width: 100%;
                 max-width: 997px;
                 box-sizing: border-box;
@@ -25,11 +36,11 @@
                 right: 0;
 
                 .block__Contacts {
-                    width: 100%;
                     max-width: 917px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    gap: 20px;
                     box-sizing: border-box;
                     background-color: #ffffff;
                     padding: 50px;
@@ -37,6 +48,16 @@
                     .map {
                         height: 387px;
                         width: 465px;
+
+                        @media (max-width: 1080px) {
+                            width: 365px;
+                            height: 304px;
+                        }
+
+                        @media (max-width: 710px) {
+                            width: 274px;
+                            height: 228px;
+                        }
                     }
 
                     .content__Contacts {
@@ -49,12 +70,16 @@
 
                         h2 {
                             color: #000000;
-                            font-size: 45px;
-                            margin-bottom: 30px;
+                            font-size: clamp(25px, 3vw, 45px);
+                            margin-bottom: 0.9em;
+                        }
+
+                        span, a {
+                            font-size: clamp(12px, 1.5vw, 16px);
                         }
 
                         .subtitle {
-                            margin-top: 30px;
+                            margin-top: 1.9em;
                         }
 
                         a {
@@ -62,6 +87,21 @@
                             text-decoration: none;
                         }
                     }
+
+                    @media (max-width: 830px) {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding: 30px;
+                        margin: 0 auto;
+                    }
+
+                    @media (max-width: 615px) {
+                        max-width: 340px;
+                    }
+                }
+                
+                @media (max-width: 1080px) {
+                    max-width: 857px;
                 }
             }
         }
