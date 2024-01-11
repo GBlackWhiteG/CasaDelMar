@@ -37,9 +37,9 @@ const Nav = () => {
                         </div>
                         <div className='bottom-nav'>
                             <Link to='/rooms' className='links'>Комнаты</Link>
-                            <p>Текст</p>
+                            <Link to='/services' className='links'>Услуги</Link>
                             <Link to='/' className={windowTop ? 'text-logo hidden-logo' : 'text-logo'}><span>Casa del Mar</span></Link>
-                            <p>Текст</p>
+                            <Link to='/offers' className='links'>Предложения</Link>
                             <p>Текст</p>
                         </div>
                     </div>
