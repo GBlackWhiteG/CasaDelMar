@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Rooms.scss';
 import Button from "../../../ui/Button/Button"
@@ -7,19 +7,23 @@ import roomsPictures from './importPictures';
 const roomsNames = ["Делюкс номер","Люкс с видом на тихий океан", "Улучшенный номер", "Люкс «Санта-Моника»",
                     "Номер с частичным видом на океан", "Номер «Пальмовая терраса»", "Пентхаус-люкс", "Номер с кроватью «King-Size»", "Номер с видом на океан"];
 
-const Rooms = () => {
-  const setBigImage = (i) => {
-    setImage(i);
-  }
+window.localStorage.roomIndex = 1;
 
-  const [bigImage, setImage] = useState(1);
+const Rooms = () => {
+  const [bigImage, setImage] = useState(window.localStorage.roomIndex);
+
+  const setBigImage = useCallback((i) => {
+    window.localStorage.roomIndex = i;
+    setImage(i);
+  }, []);
+
 
   return (
     <section className='Rooms'>
       <div className='container'>
         <div className='big-image__Rooms'>
           <img src={roomsPictures[bigImage]} alt=''/>
-          <Button text="Подробнее" link={`room/${bigImage}`} />
+          <Button text="Подробнее" link={`rooms/${bigImage}`} />
         </div>
         <div className='content__Rooms'>
           <h2>Комнаты</h2>

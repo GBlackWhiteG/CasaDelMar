@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../media/casa-del-mar--logo.svg'
 import './Nav.scss';
 
@@ -28,17 +29,16 @@ const Nav = () => {
         <>
             <nav className={windowTop ? 'Nav' : 'Nav hidden-nav'}>
                 <div className='container'>
-                    <div className="nav-items">
+                    <div className={isNavOpen ? 'nav-items' : 'nav-items nav-show'}>
                         <div className='top-nav'>
                             <p>Текст</p>
-                            <img src={logo} className={windowTop ? "big-logo" : "big-logo hidden-big-logo"} alt='' />
+                            <Link to='/'><img src={logo} className={windowTop ? "logo" : "logo hidden-logo"} alt='' /></Link>
                             <p>Текст</p>
                         </div>
-                        <div className={isNavOpen ? 'bottom-nav' : 'bottom-nav nav-show'}>
-                            <img src={logo} className='logo' alt='logo'/>
+                        <div className='bottom-nav'>
+                            <Link to='/rooms' className='links'>Комнаты</Link>
                             <p>Текст</p>
-                            <p>Текст</p>
-                            <span className={windowTop ? 'text-logo hidden-logo' : 'text-logo'}>Casa del Mar</span>
+                            <Link to='/' className={windowTop ? 'text-logo hidden-logo' : 'text-logo'}><span>Casa del Mar</span></Link>
                             <p>Текст</p>
                             <p>Текст</p>
                         </div>
