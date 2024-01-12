@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
+import Main from "./Main/Main";
 
 const Room = () => {
 
     const {id} = useParams();
 
     return (
-        <h1>Комната №{id}</h1>
+        <Main index={id} />
     )
 }
 

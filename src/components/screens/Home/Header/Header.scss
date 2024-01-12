@@ -23,7 +23,7 @@
                 font-family: 'Myriad Pro';
                 font-weight: bold;
                 font-size: clamp(60px, 8vw, 150px);
-                line-height: 190%;
+                line-height: 150%;        
                 text-align: center;
                 position: relative;
             }
@@ -37,12 +37,13 @@
 
             .title::before {
                 content: "Santa Monica";
-                transform: translate(0%, -35%);
+                top: -35%;
             }
             
             .title::after {
                 content: "California";
-                transform: translate(-100%, -35%);
+                top: -35%;
+                transform: translateX(-100%);
             }
         }
     }

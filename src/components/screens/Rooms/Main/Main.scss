@@ -2,18 +2,81 @@
     padding-top: 50px;
 
     .container {
+        max-width: 1440px;
+
         .items {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            list-style: none;
+
+            @media (max-width: 1024px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 564px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
 
             .item {
+                list-style: none;
                 background-color: #ffffff;
-                //padding: 20px;
+                transition: .2s;
 
-                img {
-                    max-width: 100%;
+                &:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+                }
+
+                .item-wrapper {
+                    color: #202020;
+                    text-decoration: none;
+
+                    .image-wrapper {
+                        img {
+                            height: 100%;
+                            max-width: 100%;
+                        }
+                    }
+                        
+
+                    .item-content {
+                        font-family: "Times New Roman";
+                        padding: 20px;
+
+                        h3 {
+                            font-size: 25px;
+                            margin-bottom: 10px;
+                        }
+
+                        p {
+
+                        }
+                    } 
+                }
+            }
+
+            .hit-room {
+                order: -1;
+                grid-column: 1 / -1;
+
+                .item-wrapper {
+                    display: flex;
+
+                    @media (max-width: 1200px) {
+                        
+                    }
+
+                    .image-wrapper {
+                        flex-basis: 200%;
+
+                        img {
+                            flex-basis: 65%;
+                        }
+                    }  
+
+                    .item-content {
+
+                    }
                 }
             }
         }
