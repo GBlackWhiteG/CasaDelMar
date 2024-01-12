@@ -1,5 +1,21 @@
 .Main {
+    padding-top: 50px;
+
     .container {
-        
+        .items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            list-style: none;
+
+            .item {
+                background-color: #ffffff;
+                //padding: 20px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
     }
 }

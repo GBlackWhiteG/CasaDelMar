@@ -30,7 +30,7 @@ const Rooms = () => {
           <h2>Комнаты</h2>
           <ul className='rooms-block'>
             {roomsInfo.map((room, index) => (
-              <li key={index} className={bigImage != index ? "room" : "room active"} onClick={() => setBigImage(index)}>
+              <li key={index} className={bigImage !== index ? "room" : "room active"} onClick={() => setBigImage(index)}>
                 <img src={room.src} alt='' />
                 <p>{room.name}</p>
               </li>

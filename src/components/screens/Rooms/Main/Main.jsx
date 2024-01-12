@@ -9,7 +9,10 @@ const Main = () => {
                     {roomsInfo.map((room, index) => (
                        <li key={index} className="item">
                             <div><img src={room.src} alt='room'/></div>
-                            <h3>{room.name}</h3>
+                            <div>
+                                <h3>{room.name}</h3>
+                                <p>{room.description}</p>
+                            </div>
                         </li> 
                     ))}
                 </ul>
