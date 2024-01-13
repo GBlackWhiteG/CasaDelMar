@@ -1,5 +1,5 @@
 'react-router-dom'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Nav from '../components/Nav/Nav'
 import Footer from '../components/Footer/Footer'
 import Home from './screens/Home/Home';

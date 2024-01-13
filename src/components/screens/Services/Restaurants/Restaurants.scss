@@ -1,0 +1,39 @@
+.Restaurants {
+    .container {
+        max-width: 1158px;
+
+        h2 {
+            color: #202020;
+            font-family: "Myriad Pro";
+            font-size: clamp(25px, 3vw, 45px);
+            padding-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .content-block {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .left-block, .right-block {
+                display: flex;
+                flex-direction: column;
+                max-width: 380px;
+
+                div {
+                    max-width: 380px;
+                    max-height: 250px;
+                    overflow: hidden;
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .right-block {
+                margin-left: auto;
+            }
+        } 
+    }
+}

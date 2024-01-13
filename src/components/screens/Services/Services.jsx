@@ -1,8 +1,14 @@
-import Main from './Main/Main'
+import Restaurants from './Restaurants/Restaurants'
+import Events from './Events/Events'
+import Experiences from './Experiences/Experiences'
 
 const Services = () => {
     return (
-        <Main />
+        <>
+            <Restaurants />
+            <Events />
+            <Experiences />
+        </>
     )
 }
 

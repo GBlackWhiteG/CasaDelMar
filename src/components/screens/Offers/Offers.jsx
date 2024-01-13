@@ -1,6 +1,8 @@
+import Main from './Main/Main'
+
 const Offers = () => {
     return (
-        <h1>Специальные предложения</h1>
+        <Main />
     )
 }
 

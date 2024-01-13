@@ -10,20 +10,23 @@
         max-width: 1158px;
 
         .nav-items {
-            .links {
-                color: #202020;
-                text-decoration: none;
-            }
 
             .top-nav, .bottom-nav {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
 
+                .links {
+                    color: #202020;
+                    font-family: "Myriad Pro";
+                    font-size: 18px;
+                    text-decoration: none;
+                }
+
                 p {
-                    font-family: "Myriad pro";
-                    font-weight: normal;
-                    font-size: 16px;
+                    color: #202020;
+                    font-family: "Myriad Pro";
+                    font-size: 18px;
                     padding: 20px 0;
                 }
 
