@@ -1,6 +1,8 @@
+import Main from './Main/Main'
+
 const Services = () => {
     return (
-        <h1>Услуги</h1>
+        <Main />
     )
 }
 
