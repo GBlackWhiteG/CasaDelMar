@@ -1,5 +1,6 @@
 .Rooms {
     background-color: #ffffff;
+    margin-top: clamp(50px, 10vw, 150px);
 
     .container {
         max-width: 1920px;

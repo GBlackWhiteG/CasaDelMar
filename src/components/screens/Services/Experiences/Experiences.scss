@@ -18,21 +18,27 @@
             display: flex;
             gap: 30px;
             list-style: none;
+            margin-top: 50px;
 
             .item {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 max-width: 400px;
 
                 div {
-
                     img {
                         height: 300px;
                         width: 100%;
                         max-width: 100%;
                         object-fit: cover;
                     }
+                }
+
+                h3 {
+                    font-family: "Times New Roman";
+                    font-size: clamp(20px, 3vw, 30px);
+                    font-style: italic;
+                    margin: 20px 0;
                 }
 
                 p {

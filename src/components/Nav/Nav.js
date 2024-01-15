@@ -36,14 +36,14 @@ const Nav = () => {
                             <p>Текст</p>
                         </div>
                         <div className='bottom-nav'>
-                            <Link to='/rooms' className='links'>Комнаты</Link>
-                            <Link to='/services' className='links'>Услуги</Link>
-                            <Link to='/' className={windowTop ? 'text-logo hidden-logo' : 'text-logo'}><span>Casa del Mar</span></Link>
+                            <Link to='/rooms' className='links link-width'>Комнаты</Link>
                             <Link to='/offers' className='links'>Предложения</Link>
-                            <p>Текст</p>
+                            <Link to='/' className={windowTop ? 'text-logo hidden-logo' : 'text-logo'}><span>Casa del Mar</span></Link>
+                            <Link to='/services' className='links'>Услуги</Link>
+                            <Link to='/reservation' className='book-button'>Забронировать</Link>
                         </div>
                     </div>
-                    <div className='burger-block' onClick={changeButton} ><span className={isNavOpen ? 'burger' : 'burger close-button'} /></div>
+                    <div className='burger-wrapper'><div className='burger-block' onClick={changeButton} ><span className={isNavOpen ? 'burger' : 'burger close-button'} /></div></div>
                 </div>
             </nav>
         </>

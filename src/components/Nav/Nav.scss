@@ -21,6 +21,29 @@
                     font-family: "Myriad Pro";
                     font-size: 18px;
                     text-decoration: none;
+                    padding: 20px 0;
+                }
+
+                .link-width {
+                    width: 100%;
+                    max-width: 130px;
+
+                    @media (max-width: 768px) {
+                        width: auto;
+                    }
+                }
+
+                .book-button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #ffffff;
+                    font-family: "Myriad Pro";
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 20px 25px;
+                    background-color: #3C6F84;
                 }
 
                 p {
@@ -61,82 +84,84 @@
             }
         }
 
-        .burger-block {
+        .burger-wrapper {
             display: none;
-            height: 21px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            margin-top: 25px;
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            transition: .3s;
 
-            .burger {
-                display: block;
-                height: 2.5px;
-                width: 23px;
-                background-color: #ffffff;
-                position: relative;
+            .burger-block {
+                height: 21px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-top: 25px;
+                position: absolute;
+                top: 30px;
+                right: 30px;
                 transition: .3s;
 
-                &::before, &::after {
-                    content: "";
-                    display: block;
-                    height: 2.5px;
-                    background-color: #ffffff;
-                    position: absolute;
-                    right: 0;
-                    transition: .3s;
-                }
-
-                &::before {
-                    width: 15px;
-                    top: -9px;
-                }
-
-                &::after {
-                    width: 19px;
-                    bottom: -9px;
-                }
-            }
-
-            &:hover {
                 .burger {
-                    width: 17px;
+                    height: 2.5px;
+                    width: 23px;
+                    background-color: #ffffff;
+                    position: relative;
+                    transition: .3s;
+
+                    &::before, &::after {
+                        content: "";
+                        display: block;
+                        height: 2.5px;
+                        background-color: #ffffff;
+                        position: absolute;
+                        right: 0;
+                        transition: .3s;
+                    }
 
                     &::before {
-                        width: 22px;
+                        width: 15px;
+                        top: -9px;
                     }
 
                     &::after {
-                        width: 20px;
+                        width: 19px;
+                        bottom: -9px;
                     }
                 }
-            }
 
-            &:active {
-                transform: scale(0.95);
-            }
+                &:hover {
+                    .burger {
+                        width: 17px;
 
-            .burger.close-button {
-                background-color: transparent;
+                        &::before {
+                            width: 22px;
+                        }
 
-                &::before, &::after {
-                    background-color: #3C6F84;
-                    width: 30px;
+                        &::after {
+                            width: 20px;
+                        }
+                    }
                 }
 
-                &::before {
-                    transform: rotateZ(45deg);
-                    top: 0;
+                &:active {
+                    transform: scale(0.95);
                 }
 
-                &::after {
-                    transform: rotateZ(-45deg);
-                    bottom: 0;
+                .burger.close-button {
+                    background-color: transparent;
+
+                    &::before, &::after {
+                        background-color: #3C6F84;
+                        width: 30px;
+                    }
+
+                    &::before {
+                        transform: rotateZ(45deg);
+                        top: 0;
+                    }
+
+                    &::after {
+                        transform: rotateZ(-45deg);
+                        bottom: 0;
+                    }
                 }
             }
         }
@@ -177,10 +202,10 @@
                         display: none;
                     }
                 }
+            }
 
-                .burger-block {
-                    display: block;
-                }
+            .burger-wrapper {
+                display: block;
             }
 
             .nav-show {
@@ -191,5 +216,5 @@
 }
 
 .hidden-nav {
-    top: -58px;
+    top: -61px;
 }
