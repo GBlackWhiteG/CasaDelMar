@@ -47,6 +47,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 }
 
 code {

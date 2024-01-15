@@ -1,5 +1,8 @@
 .ExOffer {
-    padding: clamp(50px, 10vw, 150px) 0;
+    padding: clamp(25px, 10vw, 75px) 0;
+    margin: clamp(25px, 10vw, 75px) 0;
+    overflow: hidden;
+    position: relative;
 
     .container {
         max-width: 1158px;
@@ -39,6 +42,22 @@
 
         @media (max-width: 450px) {
             justify-content: center;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 65vw;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-color: #ffffff;
+        z-index: -1;
+
+        @media (max-width: 450px) {
+            display: none;
         }
     }
 }

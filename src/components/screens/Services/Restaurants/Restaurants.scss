@@ -1,38 +1,104 @@
 .Restaurants {
+    .main-photo-wrapper {
+        width: 100%;
+        max-width: 1920px;
+        max-height: 700px;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+
+        .main-photo {
+            width: 100%;
+            filter: brightness(0.4);
+        }
+
+        .main-photo-content {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            h2 {
+                color: #ffffff;
+                font-family: "Times New Roman";
+                font-size: clamp(25px, 3vw, 45px);
+                margin-bottom: 40px;
+            }
+
+            p {
+                width: 60%;
+                color: #ffffff;
+                font-family: "Times New Roman";
+                font-size: clamp(14px, 1.5vw, 20px);
+                margin: 0 auto;
+            }
+        }
+    }
+
     .container {
         max-width: 1158px;
-
-        h2 {
-            color: #202020;
-            font-family: "Myriad Pro";
-            font-size: clamp(25px, 3vw, 45px);
-            padding-top: 50px;
-            margin-bottom: 30px;
-        }
 
         .content-block {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
 
             .left-block, .right-block {
                 display: flex;
-                flex-direction: column;
-                max-width: 380px;
 
                 div {
-                    max-width: 380px;
-                    max-height: 250px;
-                    overflow: hidden;
+                    flex-basis: 50%;
+                    position: relative;
 
                     img {
+                        height: 100%;
                         max-width: 100%;
+                    }
+
+                    .content {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #ffffff;
+                        padding: 50px 0;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateX(100%) translateY(-50%);
+                        z-index: 1;
+    
+                        p {
+                            text-align: center;
+                            margin: 0 100px;
+                        }
+                    }
+
+                    .reversed {
+                        transform: translateX(-100%) translateY(-50%);
                     }
                 }
             }
 
+            .left-block>.image-wrapper .content {
+                background-color: #ffffff;
+            }
+
+            .right-block>.image-wrapper .content {
+                background-color: #f9f9f9;
+            }
+
+            .left-block>.image-wrapper .image-wrapper {
+                background-color: #f9f9f9;
+            }
+
+            .right-block>.image-wrapper .image-wrapper {
+                background-color: #ffffff;
+            }
+
             .right-block {
-                margin-left: auto;
+                flex-direction: row-reverse;
             }
         } 
     }
