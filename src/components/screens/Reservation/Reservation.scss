@@ -1,0 +1,38 @@
+.Reservation {
+    .container {
+        max-width: 1420px;
+
+        .calendar-block {
+            h2 {
+                padding-top: 50px;
+                margin-bottom: 30px;
+            }
+
+            .calendar {
+                margin: 0 auto;
+            }
+        }
+
+        .avialable-rooms {
+            h3 {
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+
+            .items {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                list-style: none;
+
+                .item {
+                    flex: 0 0 32.8%;
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
