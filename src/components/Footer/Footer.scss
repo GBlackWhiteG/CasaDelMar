@@ -1,5 +1,28 @@
 .Footer {
     background-color: #ffffff;
-    height: 180px;
+    padding: 20px 0;
     margin-top: 200px;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1420px;
+
+        .footer-link {
+            color: #202020;
+            text-decoration: none;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .logo {
+                max-width: 100px;
+            }
+        }
+    }
 }
