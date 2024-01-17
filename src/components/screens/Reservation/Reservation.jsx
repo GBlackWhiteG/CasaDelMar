@@ -78,7 +78,11 @@ const Reservation = () => {
                                 <img src={room.src} alt='' />
                                 <div className="item-content"> 
                                     <h4>{room.name}</h4>
-                                    <span className="price">от: </span>    
+                                    <div className="price-block">
+                                        <span className="price-wrapper">от: <span className="price">{room.price} ₽</span></span>
+                                        <span className="notice">Без учета налогов</span>
+                                    </div>
+                                    <div className="reservation-button">Забронировать</div>
                                 </div>
                             </li>
                         ))}

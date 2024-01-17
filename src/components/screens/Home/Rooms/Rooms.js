@@ -13,12 +13,6 @@ const Rooms = () => {
     setImage(i);
   }, []);
 
-  /*
-  Object.entries(roomsInfo).map((room) => (
-    console.log(room)
-  ));
-  */
-
   return (
     <section className='Rooms'>
       <div className='container'>

@@ -56,10 +56,36 @@
                     }
 
                     .item-content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
 
                         h4 {
                             font-style: italic;
                             font-size: clamp(15px, 3vw, 25px);
+                        }
+
+                        .price-block {
+                            display: flex;
+                            flex-direction: column;
+
+                            .price-wrapper {
+                                .price {
+                                    font-weight: bold;
+                                }
+
+                                .notice {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+
+                        .reservation-button {
+                            display: inline-block;
+                            max-width: 150px;
+                            color: #ffffff;
+                            background-color: #3C6F84;
+                            padding: 10px 20px;
                         }
                     }
                 }

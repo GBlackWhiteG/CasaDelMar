@@ -1,5 +1,6 @@
 .Nav {
     width: 100%;
+    box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.2);
     background-color: #ffffff;
     position: fixed;
     top: 0;
@@ -16,12 +17,16 @@
                 justify-content: space-between;
                 align-items: center;
 
-                .links {
+                .links, a {
                     color: #202020;
                     font-family: "Myriad Pro";
                     font-size: 18px;
                     text-decoration: none;
                     padding: 20px 0;
+                }
+
+                a {
+                    font-size: 16px;
                 }
 
                 .link-width {
@@ -42,7 +47,7 @@
                     font-size: 18px;
                     text-transform: uppercase;
                     text-decoration: none;
-                    padding: 20px 25px;
+                    padding: 21px 25px;
                     background-color: #3C6F84;
                 }
 

@@ -6,7 +6,6 @@ import Rooms from './Rooms/Rooms';
 import Services from './Services/Services'
 import Promotions from './Promotions/Promotions';
 import Contacts from './Contacts/Contacts';
-import Footer from '../../Footer/Footer';
 
 const Home = () => {
     return (
