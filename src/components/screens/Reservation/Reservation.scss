@@ -1,15 +1,33 @@
 .Reservation {
+    padding-top: 50px;
+
     .container {
         max-width: 1420px;
 
+        h2, h3, h4 {
+            font-family: "Times New Roman";
+        }
+
         .calendar-block {
-            h2 {
-                padding-top: 50px;
-                margin-bottom: 30px;
-            }
+            display: flex;
+            justify-content: center;
+            gap: 50px;
 
             .calendar {
                 margin: 0 auto;
+ 
+            }
+
+            .input-block {
+                h2 {
+                    padding-top: 50px;
+                    margin-bottom: 30px;
+                }
+
+                .input__Reservation {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
         }
 
@@ -20,16 +38,29 @@
             }
 
             .items {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
                 list-style: none;
 
                 .item {
-                    flex: 0 0 32.8%;
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                    background-color: #ffffff;
 
                     img {
-                        max-width: 100%;
+                        width: 100%;
+                        max-width: 350px;
+                        object-fit: cover;
+                    }
+
+                    .item-content {
+
+                        h4 {
+                            font-style: italic;
+                            font-size: clamp(15px, 3vw, 25px);
+                        }
                     }
                 }
             }

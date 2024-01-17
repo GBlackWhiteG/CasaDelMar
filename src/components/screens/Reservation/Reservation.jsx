@@ -31,18 +31,44 @@ const Reservation = () => {
         <section className="Reservation">
             <div className="container">
                 <div className="calendar-block">
-                    <h2>Бронирование</h2>
-                    <Calendar
-                        className="calendar"
-                        onChange={onChangeCalendar}
-                        value={calendarValue}
-                        selectRange={true}
-                        showDoubleView={showDoubleView}
-                        minDate={new Date()}
-                        tileDisabled={tileDisabled}
-                        prev2Label={null}
-                        next2Label={null}
-                    />
+                    <div>
+                        <Calendar
+                            className="calendar"
+                            onChange={onChangeCalendar}
+                            value={calendarValue}
+                            selectRange={true}
+                            showDoubleView={showDoubleView}
+                            minDate={new Date()}
+                            tileDisabled={tileDisabled}
+                            prev2Label={null}
+                            next2Label={null}
+                        />
+                    </div>
+                    <div className="input-block">
+                        <h2>Бронирование</h2>
+                        <form>
+                            <div className="children input__Reservation">
+                                <label>Взрослые</label>
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div className="adult input__Reservation">
+                                <label>Дети</label>
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div className="avialable-rooms">
                     <h3>Доступные комнаты</h3>
@@ -50,7 +76,10 @@ const Reservation = () => {
                         {roomsInfo.map((room, index) => (
                             <li key={index} className="item">
                                 <img src={room.src} alt='' />
-                                <p>{room.name}</p>
+                                <div className="item-content"> 
+                                    <h4>{room.name}</h4>
+                                    <span className="price">от: </span>    
+                                </div>
                             </li>
                         ))}
                     </ul>
