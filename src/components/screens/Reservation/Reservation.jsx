@@ -13,6 +13,30 @@ const Reservation = () => {
     
         return date >= startDate && date <= endDate;
     };
+
+    const findAvialableRooms = async () => {
+        const dates = {
+            startTime: String(calendarValue[0]),
+            endTime: String(calendarValue[1])
+        }
+
+        const headers = new Headers();
+        headers.set("Content-Type", "application/json");
+        const options = {
+            mode: "no-cors",
+            method: "GET",
+            headers: headers,
+            //body: JSON.stringify(dates)
+        };
+
+        const response = await fetch("https://localhost:7070/api/reservation/list");
+        if (response.ok) {
+            console.log(response.body);
+        }
+        else {
+            console.log("Ошибка");
+        }
+    }
     
     useEffect(() => {
         const handleResize = () => {
@@ -68,6 +92,7 @@ const Reservation = () => {
                                 </select>
                             </div>
                         </form>
+                        <button onClick={findAvialableRooms} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
                     </div>
                 </div>
                 <div className="avialable-rooms">

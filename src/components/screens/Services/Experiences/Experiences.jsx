@@ -8,7 +8,7 @@ const Experiences = () => {
     return (
         <section className="Experiences">
             <div className="container">
-                <h2>Опыт</h2>
+                <h2>Активный отдых</h2>
                 <div><img className='main-photo__Experiences' src={seaside} alt="seaside" /></div>
                 <ul className='items'>
                     <li className='item'>
