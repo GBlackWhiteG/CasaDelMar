@@ -38,10 +38,10 @@ const Nav = () => {
                         </div>
                         <div className='bottom-nav'>
                             <Link to='/rooms' className='links link-width' onClick={scrollTop}>Комнаты</Link>
-                            <Link to='/offers' className='links'>Предложения</Link>
-                            <Link to='/' className={windowTop ? 'text-logo hidden-logo' : 'text-logo'}><span>Casa del Mar</span></Link>
-                            <Link to='/services' className='links'>Услуги</Link>
-                            <Link to='/reservation' className='book-button'>Забронировать</Link>
+                            <Link to='/offers' className='links' onClick={scrollTop}>Предложения</Link>
+                            <Link to='/' className={windowTop ? 'text-logo hidden-logo' : 'text-logo'} onClick={scrollTop}><span>Casa del Mar</span></Link>
+                            <Link to='/services' className='links' onClick={scrollTop}>Услуги</Link>
+                            <Link to='/reservation' className='book-button' onClick={scrollTop}>Забронировать</Link>
                         </div>
                     </div>
                     <div className='burger-wrapper'><div className='burger-block' onClick={changeButton} ><span className={isNavOpen ? 'burger' : 'burger close-button'} /></div></div>
