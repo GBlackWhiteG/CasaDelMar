@@ -8,6 +8,10 @@
 .container {
   padding: 0 40px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
 }
 
 @font-face {

@@ -16,7 +16,20 @@ const Main = () => {
                                 <div className='image-wrapper'><img src={room.src} alt='room'/></div>
                                 <div className='item-content'>
                                     <h3>{room.name}</h3>
-                                    <p>{room.description}</p>
+                                    <ul className='properties-items'>
+                                        <li className='item__properties'>
+                                            <span className='property'>37</span>
+                                            <span>кв. м</span>
+                                        </li>
+                                        <li className='item__properties'>
+                                            <span className='property'>1</span>
+                                            <span>спальня</span>
+                                        </li>
+                                        <li className='item__properties'>
+                                            <span className='property'>1</span>
+                                            <span>кровать</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </Link> 
                         </li>

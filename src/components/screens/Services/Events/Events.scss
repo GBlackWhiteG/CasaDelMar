@@ -1,25 +1,33 @@
 .Events {
-    background-color: #292929;
-    padding: 150px 0;
+    margin-top: 150px;
 
     .container {
         max-width: 1920px;
+        padding: 0;
+        position: relative;
 
         h2 {
             color: #ffffff;
             font-family: "Times New Roman";
             font-size: clamp(25px, 3vw, 45px);
             margin-bottom: 40px;
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            z-index: 1;
         }
 
         .slider {
+            .slider-image-wrapper {
+                filter: brightness(0.4);
+            }
 
             .slick-prev, .slick-next {
                 z-index: 1;
 
                 &::before {
                     font-size: 30px;
-                    color: #3C6F84;
+                    color: #ffffff;
                 }
             }
 
@@ -33,20 +41,44 @@
 
             .slider-image-wrapper {
                 max-height: 700px;
+
                 img {
+                    max-height: 700px;
                     width: 100%;
                     object-fit: cover;
                     object-position: 50% 50%;
                 }
             }
+
+            .slick-dots {
+                color: #ffffff;
+                bottom: 10px;
+
+                li {
+                    button:before {
+                        color: #ffffff;
+                        z-index: 4;
+                    }
+                }
+            }
         }
 
-        p {
-            color: #ffffff;
-            font-family: "Times New Roman";
-            font-size: clamp(10px, 1.5vw, 16px);
-            text-align: center;
-            margin-top: 50px;
+        .slider-text-wrapper {
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            p {
+                width: 50%;
+                color: #ffffff;
+                font-family: "Times New Roman";
+                font-size: clamp(14px, 1.5vw, 20px);
+                text-align: center;
+                padding: 40px 0 50px;
+                margin: 0 auto;
+            }
         }
     }
 }

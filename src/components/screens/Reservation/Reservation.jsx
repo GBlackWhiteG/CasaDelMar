@@ -1,42 +1,34 @@
 import { useEffect, useState } from "react";
 import Calendar from "react-calendar";
-import roomsInfo from "../../services/importPicturesInfo"
 import 'react-calendar/dist/Calendar.css'
 import './Reservation.scss'
 
 const Reservation = () => {
     const [calendarValue, onChangeCalendar] = useState(new Date());
     const [showDoubleView, setShowDoubleView] = useState(true);
+    const [roomsInfo, setRoomsInfo] = useState([{
+        "id": 1,
+        "photoURL": "/rooms/delux.jpg",
+        "name": "Делюкс номер",
+        "description": "Резиновые утки для серфинга и ночные истории с мраморными ванными комнатами и кроватями с балдахином - даже роскошь иногда требует перерыва для игр.",
+        "price": 55767,
+    }
+]);
+
+    const getRoomsInfo = () => {
+        findAvialableRooms().then((rooms) => {
+            setRoomsInfo(rooms);
+        });
+    };
+
+    /*
     const tileDisabled = ({ date }) => {
         const startDate = new Date(2024, 0, 23);
         const endDate = new Date(2024, 0, 25);
     
         return date >= startDate && date <= endDate;
     };
-
-    const findAvialableRooms = async () => {
-        const dates = {
-            startTime: String(calendarValue[0]),
-            endTime: String(calendarValue[1])
-        }
-
-        const headers = new Headers();
-        headers.set("Content-Type", "application/json");
-        const options = {
-            mode: "no-cors",
-            method: "GET",
-            headers: headers,
-            //body: JSON.stringify(dates)
-        };
-
-        const response = await fetch("https://localhost:7070/api/reservation/list");
-        if (response.ok) {
-            console.log(response.body);
-        }
-        else {
-            console.log("Ошибка");
-        }
-    }
+    */
     
     useEffect(() => {
         const handleResize = () => {
@@ -49,7 +41,29 @@ const Reservation = () => {
         return () => {
           window.removeEventListener('resize', handleResize);
         };
-      }, []);
+    }, []);
+
+    const findAvialableRooms = async () => {
+        const dates = {
+            startTime: String(calendarValue[0]),
+            endTime: String(calendarValue[1])
+        }
+
+        const headers = new Headers();
+        headers.set("Content-Type", "application/json");
+        const options = {
+            method: "GET",
+            headers: headers,
+            //body: JSON.stringify(dates)
+        };
+
+        const response = await fetch("https://localhost:7070/api/reservation/list", options);
+        if (response.ok) {
+            return await response.json();
+        }
+        
+        return [];
+    }
 
     return (
         <section className="Reservation">
@@ -63,7 +77,7 @@ const Reservation = () => {
                             selectRange={true}
                             showDoubleView={showDoubleView}
                             minDate={new Date()}
-                            tileDisabled={tileDisabled}
+                            //tileDisabled={tileDisabled}
                             prev2Label={null}
                             next2Label={null}
                         />
@@ -92,15 +106,15 @@ const Reservation = () => {
                                 </select>
                             </div>
                         </form>
-                        <button onClick={findAvialableRooms} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
+                        <button onClick={getRoomsInfo} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
                     </div>
                 </div>
                 <div className="avialable-rooms">
                     <h3>Доступные комнаты</h3>
                     <ul className="items">
-                        {roomsInfo.map((room, index) => (
-                            <li key={index} className="item">
-                                <img src={room.src} alt='' />
+                        {roomsInfo.map(room => (
+                            <li key={room.id} className="item">
+                                <img src={room.photoURL} alt='' />
                                 <div className="item-content"> 
                                     <h4>{room.name}</h4>
                                     <div className="price-block">

@@ -1,67 +1,50 @@
 .Footer {
-    color: #202020;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     background-color: #ffffff;
     padding: 20px 0;
     margin-top: 150px;
 
     .container {
         max-width: 1158px;
-    }
-
-    .footer-link {
         color: #202020;
-        text-decoration: none;
-    }
-
-    .logo-wrapper {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 
-        .logo {
-            max-width: 100px;
-        }
-    }
-
-    .top-footer {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .footer-nav {
+        .top-footer {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-            .item__footer-nav {
-                color: inherit;
-                text-decoration: none;
+            justify-content: space-between;
+            align-items: center;
+    
+            .footer-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+    
+                .item__footer-nav {
+                    color: inherit;
+                    text-decoration: none;
+                }
             }
-        }
 
-        .footer-contacts {
-            max-width: 150px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-            a {
+            .footer-link {
                 color: #202020;
                 text-decoration: none;
             }
+    
+            .footer-contacts {
+                max-width: 150px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+    
+                a {
+                    color: #202020;
+                    text-decoration: none;
+                }
+            }
         }
-    }
-
-    .bottom-footer-wrapper {
-        width: 100%;
-        border-top: 3px solid #f1f1f1;
-        margin-top: 20px;
 
         .bottom-footer {
             width: 100%;
@@ -69,11 +52,27 @@
             justify-content: space-between;
             padding-top: 20px;
             padding-bottom: 10px;
-
+    
             a {
                 color: #202020;
                 text-decoration: none;
             }
         }
+    
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            .logo {
+                max-width: 100px;
+            }
+        }
+    }
+
+    .footer-bottom-container {
+        border-top: 2px solid #f1f1f1;
+        margin-top: 20px;
     }
 }
