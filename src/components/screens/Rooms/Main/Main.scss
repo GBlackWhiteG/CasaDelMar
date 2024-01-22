@@ -13,7 +13,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            @media (max-width: 564px) {
+            @media (max-width: 650px) {
                 grid-template-columns: repeat(1, 1fr);
             }
 
@@ -39,10 +39,16 @@
                     }   
 
                     .item-content {
+                        display: flex;
+                        flex-direction: column;
                         justify-content: space-between;
                         font-family: "Times New Roman";
 
                         h3 {
+                            min-height: 58px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                             font-size: 25px;
                             text-align: center;
                             margin: 20px 10px 20px;
@@ -55,6 +61,7 @@
                         .properties-items {
                             display: flex;
                             justify-content: space-between;
+                            align-items: center;
                             list-style: none;
                             padding: 10px;
                             background-color: #f9f9f9;
@@ -69,17 +76,37 @@
                                     font-size: 24px;
                                 }
                             }
+
+                            .item-line {
+                                height: 25px;
+                                width: 2px;
+                                background-color: #ffffff;
+                            }
+                        }
+
+                        .Button {
+                            text-align: center;
+
+                            &:hover {
+                                
+                            }
                         }
                     } 
                 }
             }
 
             .hit-room {
+                max-height: auto;
                 order: -1;
                 grid-column: 1 / 3;
 
+                @media (max-width: 650px) {
+                    grid-column: 1 / 1;
+                }
+
                 .item-wrapper {
                     display: flex;
+                    
 
                     @media (max-width: 1200px) {
                         

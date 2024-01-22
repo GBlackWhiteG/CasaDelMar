@@ -15,15 +15,25 @@
         }
 
         .items {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             list-style: none;
             margin-top: 50px;
+
+            @media (max-width: 650px) {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 50px;
+            }
 
             .item {
                 display: flex;
                 flex-direction: column;
                 max-width: 400px;
+
+                @media (max-width: 650px) {
+                    margin: 0 auto;
+                }
 
                 div {
                     img {
