@@ -17,23 +17,23 @@ const Main = () => {
                                 <div className='image-wrapper'><img src={room.src} alt='room'/></div>
                                 <div className='item-content'>
                                     <h3>{room.name}</h3>
-                                    <ul className='properties-items'>
-                                        <li className='item__properties'>
-                                            <span className='property'>37</span>
-                                            <span>кв. м</span>
-                                        </li>
-                                        <div className='item-line' />
-                                        <li className='item__properties center-item'>
-                                            <span className='property'>1</span>
-                                            <span>спальня</span>
-                                        </li>
-                                        <div className='item-line' />
-                                        <li className='item__properties'>
-                                            <span className='property'>1</span>
-                                            <span>кровать</span>
-                                        </li>
-                                    </ul>
-                                    <Button className="item-button" text="Подробнее" />
+                                    <div className='properties-wrapper'>
+                                        <ul className='properties-items'>
+                                            <li className='item__properties center-item'>
+                                                <span className='property'>1</span>
+                                                <span className='property-text'>спальня</span>
+                                            </li>
+                                            <li className='item__properties'>
+                                                <span className='property'>37</span>
+                                                <span className='property-text'>кв. м</span>
+                                            </li>
+                                            <li className='item__properties'>
+                                                <span className='property'>1</span>
+                                                <span className='property-text'>кровать</span>
+                                            </li>
+                                        </ul>
+                                        <span className='price-wrapper'>от: <span className='price'>55767 ₽</span></span>
+                                    </div>
                                 </div>
                             </Link> 
                         </li>
