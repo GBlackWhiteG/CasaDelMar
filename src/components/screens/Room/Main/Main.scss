@@ -12,6 +12,42 @@
     }
 
     .container {
-        
+        max-width: 1440px;
+
+        h2 {
+            font-family: "Times New Roman";
+            font-size: 40px;
+            margin-top: 60px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: clamp(12px, 2vw, 18px);
+            line-height: 155%;
+        }
+
+        .features {
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        .comfort {
+            font-family: "Times New Roman";
+
+            h3 {
+                font-size: 25px;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+
+            .comfort-items {
+                list-style: none;
+                font-size: 18px;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
     }
 }
