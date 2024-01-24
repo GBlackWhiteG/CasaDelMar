@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import blockAnimation from '../../../services/blockAnimation';
 import './Promotions.scss';
 import back from '../../../../media/back.jpg';
 import beach from '../../../../media/beach.jpg';
@@ -5,9 +7,21 @@ import tables from '../../../../media/tables.jpg'
 
 const Promotions = () => {
   return (
-    <section className='Promotions'>
+    <motion.section
+      className='Promotions'
+    >
       <div className='container'>
-        <div className='item__Promotions'>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={blockAnimation}
+          transition={{
+            ease: [.19, .58, .64, .93],
+            duration: 0.4,
+          }}
+          className='item__Promotions'
+        >
           <div className='image'><img src={back} /></div>
           <div className='item-content'>
             <div className='item-wrapper'>
@@ -16,8 +30,18 @@ const Promotions = () => {
               <p>Предложение зависит от наличия возможности. Могут применяться закрытые даты. Не суммируется с другими предложениями или пакетами.</p>
             </div>
           </div>
-        </div>
-        <div className='item__Promotions reversed'>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={blockAnimation}
+          transition={{
+            ease: [.19, .58, .64, .93],
+            duration: 0.4,
+          }}
+          className='item__Promotions reversed'
+        >
           <div className='image'><img src={beach} /></div>
           <div className='item-content'>
             <div className='item-wrapper'>
@@ -26,8 +50,18 @@ const Promotions = () => {
               <p>Предложение зависит от наличия возможности. Могут применяться закрытые даты. Не суммируется с другими предложениями или пакетами.</p>
             </div>
           </div>
-        </div>
-        <div className='item__Promotions'>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={blockAnimation}
+          transition={{
+            ease: [.19, .58, .64, .93],
+            duration: 0.4,
+          }}
+          className='item__Promotions'
+        >
           <div className='image'><img src={tables} /></div>
           <div className='item-content'>
             <div className='item-wrapper'>
@@ -36,10 +70,10 @@ const Promotions = () => {
               <p>Предложение зависит от наличия возможности. Могут применяться закрытые даты. Не суммируется с другими предложениями или пакетами.</p>
             </div>
           </div>
-        </div>
+        </motion.div>
         <p className='mobile-warning'>Некоторые предложения зависят от наличия возможности. Могут применяться закрытые даты. Не суммируется с другими предложениями или пакетами.</p>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

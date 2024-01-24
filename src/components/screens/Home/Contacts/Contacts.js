@@ -1,10 +1,22 @@
-import './Contacts.scss';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
+import { motion } from 'framer-motion';
 import back from '../../../../media/contacts-picture.png'
+import blockAnimation from '../../../services/blockAnimation';
+import './Contacts.scss';
 
 const Contacts = () => {
   return (
-    <section className='Contacts'>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={blockAnimation}
+      transition={{
+        ease: [.19, .58, .64, .93],
+        duration: 0.4,
+      }}
+      className='Contacts'
+    >
       <div className='container'>
         <div className='image-wrapper'><img src={back}/></div>
         <div className='container__Contacts'>
@@ -29,7 +41,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

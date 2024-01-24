@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import blockAnimation from '../../../services/blockAnimation';
 import './Services.scss';
 import eat from "../../../../media/eat.jpg";
 import events from "../../../../media/events.jpg";
@@ -6,7 +8,17 @@ import { Link } from 'react-router-dom';
 
 const Services = () => {
   return (
-    <section className='Services'>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={blockAnimation}
+      transition={{
+        ease: [.19, .58, .64, .93],
+        duration: 0.4,
+      }}
+      className='Services'
+    >
       <div className='container'>
         <h2>Услуги и удобства</h2>
         <div className='items__Services'>
@@ -40,7 +52,7 @@ const Services = () => {
         </div>
         <p>Пожалуйста, обратите внимание, что некоторые из представленных услуг и удобств могут быть доступны только при определенных условиях или требовать предварительного бронирования. Для более подробной информации или заказа дополнительных услуг, пожалуйста, свяжитесь с нашими специалистами по телефону или через форму обратной связи на сайте. Мы стремимся предоставить нашим гостям наилучший отдых, и ваш комфорт является нашим приоритетом.</p>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -1,4 +1,6 @@
 import React, { useCallback, useState } from 'react';
+import { motion } from 'framer-motion';
+import blockAnimation from '../../../services/blockAnimation';
 import './Rooms.scss';
 import Button from "../../../ui/Button/Button"
 import roomsInfo from '../../../services/importPicturesInfo'
@@ -14,7 +16,17 @@ const Rooms = () => {
   }, []);
 
   return (
-    <section className='Rooms'>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={blockAnimation}
+      transition={{
+        ease: [.19, .58, .64, .93],
+        duration: 0.4,
+      }}
+      className='Rooms'
+    >
       <div className='container'>
         <div className='big-image__Rooms'>
           <img src={roomsInfo[bigImage]["src"]} alt=''/>
@@ -32,7 +44,7 @@ const Rooms = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
