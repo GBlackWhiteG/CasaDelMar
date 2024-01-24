@@ -115,6 +115,10 @@
                 order: -1;
                 grid-column: 1 / 3;
                 
+                @media (max-width: 540px) {
+                    grid-column: 1 / 1;
+                }
+
                 &:hover {
                     .item-wrapper {
                         .item-content {
@@ -138,6 +142,10 @@
                         bottom: -100%;
                         left: 0;
                         transition: .4s;
+
+                        @media (max-width: 540px) {
+                            position: static;
+                        }
 
                         h3 {
                             margin:  0 auto;

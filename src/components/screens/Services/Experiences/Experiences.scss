@@ -1,6 +1,10 @@
 .Experiences {
     margin-top: 150px;
 
+    @media (max-width: 768px) {
+        margin-top: 50px;
+    }
+    
     .container {
         max-width: 1145px;
 

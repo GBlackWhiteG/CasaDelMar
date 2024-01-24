@@ -98,7 +98,6 @@
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                margin-top: 25px;
                 position: absolute;
                 top: 30px;
                 right: 30px;
@@ -179,21 +178,27 @@
             padding: 0;
 
             .nav-items {
+                max-width: 450px;
                 width: 100%;
                 position: absolute;
-                right: 100%;
+                right: -100%;
                 transition: right .3s;
 
                 .top-nav {
+                    justify-content: center;
                     background-color: #ffffff;
-                    padding: 100px 35px 0;
+                    padding: 50px 35px 0;
 
                     .logo {
                         display: block;
                         width: 85px;
                         margin-bottom: 20px;
                         position: static;
-                        transform: translateY(-100%);
+                        transform: translate(0);
+                    }
+
+                    a:first-child, a:last-child {
+                        display: none;
                     }
                 }
 

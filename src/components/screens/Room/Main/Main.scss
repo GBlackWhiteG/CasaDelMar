@@ -16,7 +16,7 @@
 
         h2 {
             font-family: "Times New Roman";
-            font-size: 40px;
+            font-size: clamp(25px, 2vw, 40px);
             margin-top: 60px;
             margin-bottom: 30px;
         }
@@ -35,14 +35,14 @@
             font-family: "Times New Roman";
 
             h3 {
-                font-size: 25px;
+                font-size: clamp(15px, 2vw, 25px);
                 margin-top: 40px;
                 margin-bottom: 20px;
             }
 
             .comfort-items {
                 list-style: none;
-                font-size: 18px;
+                font-size: clamp(10px, 2vw, 18px);
 
                 li {
                     margin-bottom: 10px;

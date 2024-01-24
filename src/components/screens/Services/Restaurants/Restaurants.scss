@@ -27,10 +27,10 @@
             }
 
             p {
-                width: 60%;
+                max-width: 350px;
                 color: #ffffff;
                 font-family: "Times New Roman";
-                font-size: clamp(14px, 1.5vw, 20px);
+                font-size: clamp(10px, 1.5vw, 20px);
                 line-height: 155%;
                 margin: 0 auto;
             }
@@ -39,6 +39,7 @@
 
     .container {
         max-width: 1158px;
+        padding: 0;
 
         .content-block {
             display: flex;
@@ -74,14 +75,19 @@
     
                         h3 {
                             font-family: "Times New Roman";
-                            font-size: clamp(20px, 3vw, 30px);
+                            font-size: clamp(15px, 3vw, 30px);
                             font-style: italic;
-                            margin: 20px 0;
+                            margin-top: 20px;
+                            margin-bottom: 0.7em;
                         }
 
                         p {
+                            color: #969696;
+                            max-width: 350px;
+                            font-family: "Times New Roman";
+                            font-size: clamp(10px, 2vw, 16px);
                             text-align: center;
-                            margin: 0 100px;
+                            margin: 0 20px;
                         }
                     }
 
