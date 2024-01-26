@@ -4,6 +4,7 @@ import blockAnimation from '../../../services/blockAnimation';
 import './Rooms.scss';
 import Button from "../../../ui/Button/Button"
 import roomsInfo from '../../../services/importPicturesInfo'
+import scrollTop from "../../../services/scrollToTop"
 
 window.localStorage.roomIndex = 1;
 
@@ -30,7 +31,7 @@ const Rooms = () => {
       <div className='container'>
         <div className='big-image__Rooms'>
           <img src={roomsInfo[bigImage]["src"]} alt=''/>
-          <Button text="Подробнее" link={`rooms/${bigImage}`} />
+          <div onClick={scrollTop}><Button text="Подробнее" link={`rooms/${bigImage}`} /></div>
         </div>
         <div className='content__Rooms'>
           <h2>Комнаты</h2>

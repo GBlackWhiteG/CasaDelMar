@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import Calendar from "react-calendar";
+import Button from "../../ui/Button/Button"
+import Modal from "../../ui/Modal/Modal";
 import 'react-calendar/dist/Calendar.css'
 import './Reservation.scss'
 
 const Reservation = () => {
     const [calendarValue, onChangeCalendar] = useState(new Date());
     const [showDoubleView, setShowDoubleView] = useState(true);
+    const [modalActive, setModalActive] = useState(true);
     const [roomsInfo, setRoomsInfo] = useState([{
         "id": 1,
         "photoURL": "/rooms/delux.jpg",
@@ -19,7 +22,11 @@ const Reservation = () => {
         findAvialableRooms().then((rooms) => {
             setRoomsInfo(rooms);
         });
-    };
+    }
+
+    const openModal = (id) => {
+        setModalActive(false)
+    }
 
     /*
     const tileDisabled = ({ date }) => {
@@ -32,7 +39,7 @@ const Reservation = () => {
     
     useEffect(() => {
         const handleResize = () => {
-          setShowDoubleView(window.innerWidth >= 768);
+          setShowDoubleView(window.innerWidth > 1200);
         };
     
         handleResize();
@@ -61,7 +68,7 @@ const Reservation = () => {
         if (response.ok) {
             return await response.json();
         }
-        
+
         return [];
     }
 
@@ -98,6 +105,7 @@ const Reservation = () => {
                             <div className="adult input__Reservation">
                                 <label>Дети</label>
                                 <select>
+                                    <option>0</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -106,7 +114,7 @@ const Reservation = () => {
                                 </select>
                             </div>
                         </form>
-                        <button onClick={getRoomsInfo} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
+                        <button className="available-button" onClick={getRoomsInfo} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
                     </div>
                 </div>
                 <div className="avialable-rooms">
@@ -114,19 +122,20 @@ const Reservation = () => {
                     <ul className="items">
                         {roomsInfo.map(room => (
                             <li key={room.id} className="item">
-                                <img src={room.photoURL} alt='' />
+                                <div><img src={room.photoURL} alt='' /></div>
                                 <div className="item-content"> 
                                     <h4>{room.name}</h4>
                                     <div className="price-block">
                                         <span className="price-wrapper">от: <span className="price">{room.price} ₽</span></span>
                                         <span className="notice">Без учета налогов</span>
                                     </div>
-                                    <div className="reservation-button">Забронировать</div>
+                                    <div className="reservation-button" onClick={openModal.bind(room.id)}><Button link="" text={"Забронировать"} /></div>
                                 </div>
                             </li>
                         ))}
                     </ul>
                 </div>
+                <Modal active={modalActive} setActive={setModalActive} />
             </div>
         </section>
     );

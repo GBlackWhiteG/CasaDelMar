@@ -5,6 +5,7 @@ import eat from "../../../../media/eat.jpg";
 import events from "../../../../media/events.jpg";
 import where from "../../../../media/where-are-we.jpg";
 import { Link } from 'react-router-dom';
+import scrollTop from '../../../services/scrollToTop';
 
 const Services = () => {
   return (
@@ -28,7 +29,7 @@ const Services = () => {
             <div className='item-wrapper'>
               <h4>Ешь и развлекайся</h4>
               <p>Вам не обязательно покидать наш роскошный отель в Санта-Монике, чтобы насладиться фантастическим рестораном морепродуктов в Лос-Анджелесе и вечерней живой музыкой.</p>
-              <Link to="/services" className='more-button'>Подробнее</Link>
+              <div onClick={scrollTop}><Link to="/services" className='more-button'>Подробнее</Link></div>
             </div>
           </div>
           <div className='item__Services'>
@@ -37,7 +38,7 @@ const Services = () => {
             <div className='item-wrapper'>
               <h4>Планировать мероприятия</h4>
               <p>Почему бы не включить Тихий океан в свою следующее мероприятия? Вы можете спланировать встречу, вечеринку, помолвку или свадьбу где угодно, вы все равно выберете отель Casa del Mar в Лос-Анджелесе, Калифорния.</p>
-              <Link to="/services" className='more-button'>Подробнее</Link>
+              <div onClick={scrollTop}><Link to="/services" className='more-button'>Подробнее</Link></div>
             </div>
           </div>
           <div className='item__Services'>
@@ -46,7 +47,7 @@ const Services = () => {
             <div className='item-wrapper'>
               <h4>Где мы процветаем</h4>
               <p>Если есть выбор, почему бы не остановиться в отеле, который предлагает уроки серфинга и йогу на песке?</p>
-              <Link to="/services" className='more-button'>Подробнее</Link>
+              <div onClick={scrollTop}><Link to="/services" className='more-button'>Подробнее</Link></div>
             </div>
           </div>
         </div>

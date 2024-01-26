@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import roomsInfo from '../../../services/importPicturesInfo'
-import Button from "../../../ui/Button/Button"
-import "./Main.scss"
+import roomsInfo from '../../../services/importPicturesInfo';
+import scrollTop from '../../../services/scrollToTop';
+import "./Main.scss";
 
 const Main = () => {
     const [hitRoom, selectHitRoom] = useState(1);
@@ -12,7 +12,7 @@ const Main = () => {
             <div className="container">
                 <div className="items">
                     {roomsInfo.map((room, index) => (
-                        <li key={index} className={index === hitRoom ? "item hit-room" : "item"}>
+                        <li key={index} onClick={scrollTop} className={index === hitRoom ? "item hit-room" : "item"}>
                             <Link to={`./${index}`} className='item-wrapper'>
                                 <div className='image-wrapper'><img src={room.src} alt='room'/></div>
                                 <div className='item-content'>
