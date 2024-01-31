@@ -16,16 +16,56 @@
     .content__modal {
         display: flex;
         flex-direction: column;
-        background-color: #ffffff;
+        gap: 20px;
+        font-family: "Myriad Pro";
         padding: 20px;
+        background-color: #ffffff;
         transform: scale(0);
         transition: .3s;
 
         h4 {
             font-family: "Times New Roman";
             font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: clamp(15px, 2vw, 30px);
+            margin-bottom: 0.7em;
+        }
+
+        .inputs-item {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: 14px;
+                margin-bottom: 0.5em;
+            }
+
+            input {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        .checkbox-block {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            input {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .submit-button {
+            color: #ffffff;
+            display: block;
+            font-family: "Myriad Pro";
+            font-weight: bold;
+            font-size: clamp(12px, 1.5vw, 20px);
+            border: none;
+            padding: 0.5em 1em;
+            margin: 0 auto;
+            background-color: #3C6F84;
         }
     }
 

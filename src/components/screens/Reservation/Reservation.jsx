@@ -6,7 +6,11 @@ import 'react-calendar/dist/Calendar.css'
 import './Reservation.scss'
 
 const Reservation = () => {
-    const [calendarValue, onChangeCalendar] = useState(new Date());
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const [calendarValue, onChangeCalendar] = useState([today, tomorrow]);
+    const dateText = ["Прибытие", "Убытие"];
     const [showDoubleView, setShowDoubleView] = useState(true);
     const [modalActive, setModalActive] = useState(true);
     const [roomsInfo, setRoomsInfo] = useState([{
@@ -93,7 +97,7 @@ const Reservation = () => {
                         <h2>Бронирование</h2>
                         <form>
                             <div className="children input__Reservation">
-                                <label>Взрослые</label>
+                                <label className="input-title">Взрослые</label>
                                 <select>
                                     <option>1</option>
                                     <option>2</option>
@@ -103,7 +107,7 @@ const Reservation = () => {
                                 </select>
                             </div>
                             <div className="adult input__Reservation">
-                                <label>Дети</label>
+                                <label className="input-title">Дети</label>
                                 <select>
                                     <option>0</option>
                                     <option>1</option>
@@ -114,6 +118,16 @@ const Reservation = () => {
                                 </select>
                             </div>
                         </form>
+                        
+                        <div className="input-date-wrapper">
+                            {calendarValue.map((date, index) => (
+                                <div key={index}>
+                                    <span className="input-title">{dateText[index]}</span>
+                                    <span className="input-date">{date.toLocaleDateString()}</span>
+                                </div>
+                            ))}
+                        </div>
+
                         <button className="available-button" onClick={getRoomsInfo} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
                     </div>
                 </div>
