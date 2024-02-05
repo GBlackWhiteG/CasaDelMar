@@ -1,6 +1,5 @@
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import { motion } from 'framer-motion';
-import back from '../../../../media/contacts-picture.png'
 import blockAnimation from '../../../services/blockAnimation';
 import './Contacts.scss';
 
@@ -18,7 +17,7 @@ const Contacts = () => {
       className='Contacts'
     >
       <div className='container'>
-        <div className='image-wrapper'><img src={back}/></div>
+        <div className='image-wrapper'><img src="/images/contacts-picture.png"/></div>
         <div className='container__Contacts'>
           <div className='wrapper__Contacts'>
             <div className='block__Contacts'>

@@ -55,25 +55,31 @@ const Reservation = () => {
     }, []);
 
     const findAvialableRooms = async () => {
-        const dates = {
-            startTime: String(calendarValue[0]),
-            endTime: String(calendarValue[1])
+        const request = {
+            roomID: 1,
+            startTime: String(calendarValue[0].toUTCString()),
+            endTime: String(calendarValue[1].toUTCString())
         }
 
         const headers = new Headers();
         headers.set("Content-Type", "application/json");
         const options = {
-            method: "GET",
+            method: "POST",
             headers: headers,
-            //body: JSON.stringify(dates)
+            body: JSON.stringify(request)
         };
 
-        const response = await fetch("https://localhost:7070/api/reservation/list", options);
+        const response = await fetch("https://localhost:7070/api/reservation/add", options);
         if (response.ok) {
             return await response.json();
         }
 
         return [];
+    }
+
+    const printDate = async () => {
+        console.log(calendarValue[0].toUTCString());
+        console.log(calendarValue[1].toUTCString());
     }
 
     return (
@@ -128,7 +134,7 @@ const Reservation = () => {
                             ))}
                         </div>
 
-                        <button className="available-button" onClick={getRoomsInfo} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
+                        <button className="available-button" onClick={printDate} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
                     </div>
                 </div>
                 <div className="avialable-rooms">

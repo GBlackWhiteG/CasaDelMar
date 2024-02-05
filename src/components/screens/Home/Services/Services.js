@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion';
 import blockAnimation from '../../../services/blockAnimation';
 import './Services.scss';
-import eat from "../../../../media/eat.jpg";
-import events from "../../../../media/events.jpg";
-import where from "../../../../media/where-are-we.jpg";
 import { Link } from 'react-router-dom';
 import scrollTop from '../../../services/scrollToTop';
 
@@ -24,7 +21,7 @@ const Services = () => {
         <h2>Услуги и удобства</h2>
         <div className='items__Services'>
           <div className='item__Services'>
-            <img src={eat} alt='Ешь и развлекайся' />
+            <img src="/images/eat.jpg" alt='Ешь и развлекайся' />
             <div className='item-bg'></div>
             <div className='item-wrapper'>
               <h4>Ешь и развлекайся</h4>
@@ -33,7 +30,7 @@ const Services = () => {
             </div>
           </div>
           <div className='item__Services'>
-            <img src={events} alt='Планировать мероприятия' />
+            <img src="/images/events.jpg" alt='Планировать мероприятия' />
             <div className='item-bg'></div>
             <div className='item-wrapper'>
               <h4>Планировать мероприятия</h4>
@@ -42,7 +39,7 @@ const Services = () => {
             </div>
           </div>
           <div className='item__Services'>
-            <img src={where} alt='Где мы процветаем' />
+            <img src="/images/where-are-we.jpg" alt='Где мы процветаем' />
             <div className='item-bg'></div>
             <div className='item-wrapper'>
               <h4>Где мы процветаем</h4>

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import blockAnimation from '../../../services/blockAnimation';
 import './ExOffer.scss';
-import collage from "../../../../media/pictures-collage.png";
 import Button from "../../../ui/Button/Button";
 
 const ExOffer = () => {
@@ -23,7 +22,7 @@ const ExOffer = () => {
           <p>Вы готовы к отдыху? Остановившись на более длительный срок, вы сможете сэкономить до 25% и получить единоразовый гостиничный кредит в размере 100 долларов США за весь период проживания.</p>
           <Button text={"Забронировать"} />
         </div>
-        <div><img className='collage-image' src={collage} /></div>
+        <div><img className='collage-image' src="/images/pictures-collage.png" /></div>
       </div>
     </motion.section>
   );

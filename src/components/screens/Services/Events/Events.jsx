@@ -1,8 +1,5 @@
 import { useState } from "react";
 import Slider from "react-slick";
-import meeting from "./../../../../media/meetings.jpg";
-import parties from "../../../../media/parties.jpg";
-import weddings from "../../../../media/weddings.jpg";
 import './Events.scss';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -32,9 +29,9 @@ const Events = () => {
             <div className="container">
                 <h2>Мероприятия</h2>
                 <Slider className="slider" {...settings}>
-                    <div className="slider-image-wrapper"><img src={meeting} alt="встречи" /></div>
-                    <div className="slider-image-wrapper"><img src={parties} alt="вечеринки" /></div>
-                    <div className="slider-image-wrapper"><img src={weddings} alt="свадьбы" /></div>
+                    <div className="slider-image-wrapper"><img src="/images/meetings.jpg" alt="встречи" /></div>
+                    <div className="slider-image-wrapper"><img src="/images/parties.jpgc" alt="вечеринки" /></div>
+                    <div className="slider-image-wrapper"><img src="/images/weddings.jpg" alt="свадьбы" /></div>
                 </Slider>
                 <div className="slider-text-wrapper"><p className="slider-text">{sliderText[sliderImageIndex]}</p></div>
             </div>

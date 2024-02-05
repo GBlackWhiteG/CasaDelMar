@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import scrollTop from '../services/scrollToTop'
-import logo from '../../media/casa-del-mar--logo.svg'
 import './Nav.scss';
 
 const Nav = () => {
@@ -33,7 +32,7 @@ const Nav = () => {
                     <div className={isNavOpen ? 'nav-items' : 'nav-items nav-show'}>
                         <div className='top-nav'>
                             <a href='tel:8448801077'>(844) 880-1077</a>
-                            <Link to='/'><img src={logo} className={windowTop ? "logo" : "logo hidden-logo"} alt='' /></Link>
+                            <Link to='/'><img src="/images/casa-del-mar--logo.svg" className={windowTop ? "logo" : "logo hidden-logo"} alt='' /></Link>
                             <a href='mail:reservations@hotelcasadelmar.com'>reservations@hotelcasadelmar.com</a>
                         </div>
                         <div className='bottom-nav'>

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import blockAnimation from '../../../services/blockAnimation';
 import './Header.scss';
-import main_video from '../../../../media/Casa_Del_Mar.mp4';
 
 const Header = () => {
   return (
@@ -10,7 +9,7 @@ const Header = () => {
     >
       <div className='container'>
         <video className='video' autoPlay muted loop>
-          <source src={main_video} type='video/mp4' />
+          <source src="videos/Casa_Del_Mar.mp4" type='video/mp4' />
         </video>
         <div className='title-block'>
           <motion.h1

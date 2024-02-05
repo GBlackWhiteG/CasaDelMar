@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion';
 import blockAnimation from '../../../services/blockAnimation';
 import './Promotions.scss';
-import back from '../../../../media/back.jpg';
-import beach from '../../../../media/beach.jpg';
-import tables from '../../../../media/tables.jpg'
 
 const Promotions = () => {
   return (
@@ -22,7 +19,7 @@ const Promotions = () => {
           }}
           className='item__Promotions'
         >
-          <div className='image'><img src={back} /></div>
+          <div className='image'><img src="/images/back.jpg" /></div>
           <div className='item-content'>
             <div className='item-wrapper'>
               <h3>Номер с видом</h3>
@@ -42,7 +39,7 @@ const Promotions = () => {
           }}
           className='item__Promotions reversed'
         >
-          <div className='image'><img src={beach} /></div>
+          <div className='image'><img src="/images/beach.jpg" /></div>
           <div className='item-content'>
             <div className='item-wrapper'>
               <h3>Пляжи</h3>
@@ -62,7 +59,7 @@ const Promotions = () => {
           }}
           className='item__Promotions'
         >
-          <div className='image'><img src={tables} /></div>
+          <div className='image'><img src="/images/tables.jpg" /></div>
           <div className='item-content'>
             <div className='item-wrapper'>
               <h3>Комнаты «Люкс»</h3>

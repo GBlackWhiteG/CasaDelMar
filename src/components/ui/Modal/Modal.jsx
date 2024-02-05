@@ -20,9 +20,9 @@ const Modal = ({active, setActive}) => {
                 </div>
                 <div className="checkbox-block">
                     <input type='checkbox' id="data" required />
-                    <label for="data">Я согласен на обработку моих персональных данных</label>
+                    <label htmlFor="data">Я согласен на обработку моих персональных данных</label>
                 </div>
-                <div><input className='submit-button' type="submit" /></div>
+                <div><input className='submit-button' type="submit" value="Отправить" /></div>
             </form>
         </div>
     );
