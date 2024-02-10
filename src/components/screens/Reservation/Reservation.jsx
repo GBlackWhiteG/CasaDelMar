@@ -10,17 +10,21 @@ const Reservation = () => {
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
     const [calendarValue, onChangeCalendar] = useState([today, tomorrow]);
-    const dateText = ["Прибытие", "Убытие"];
+    const dateText = ["Заезд", "Выезд"];
     const [showDoubleView, setShowDoubleView] = useState(true);
     const [modalActive, setModalActive] = useState(true);
-    const [roomsInfo, setRoomsInfo] = useState([{
-        "id": 1,
-        "photoURL": "/rooms/delux.jpg",
-        "name": "Делюкс номер",
-        "description": "Резиновые утки для серфинга и ночные истории с мраморными ванными комнатами и кроватями с балдахином - даже роскошь иногда требует перерыва для игр.",
-        "price": 55767,
+    const [roomsInfo, setRoomsInfo] = useState([]);
+    const [roomID, setRoomID] = useState(1);
+    const [adultsCount, setAdultsCount] = useState(1);
+    const [childrenCount, setChildrenCount] = useState(0);
+
+    const adutlsHandle = (e) => {
+        setAdultsCount(e.target.value);
     }
-]);
+
+    const childrenHandle = (e) => {
+        setChildrenCount(e.target.value);
+    }
 
     const getRoomsInfo = () => {
         findAvialableRooms().then((rooms) => {
@@ -28,18 +32,14 @@ const Reservation = () => {
         });
     }
 
-    const openModal = (id) => {
-        setModalActive(false)
-    }
+    useEffect(() => {
+        getRoomsInfo();
+    }, []);
 
-    /*
-    const tileDisabled = ({ date }) => {
-        const startDate = new Date(2024, 0, 23);
-        const endDate = new Date(2024, 0, 25);
-    
-        return date >= startDate && date <= endDate;
-    };
-    */
+    const openModal = (id) => {
+        setRoomID(id);
+        setModalActive(false);
+    }
     
     useEffect(() => {
         const handleResize = () => {
@@ -56,7 +56,6 @@ const Reservation = () => {
 
     const findAvialableRooms = async () => {
         const request = {
-            roomID: 1,
             startTime: String(calendarValue[0].toUTCString()),
             endTime: String(calendarValue[1].toUTCString())
         }
@@ -64,22 +63,17 @@ const Reservation = () => {
         const headers = new Headers();
         headers.set("Content-Type", "application/json");
         const options = {
-            method: "POST",
+            method: "PUT",
             headers: headers,
             body: JSON.stringify(request)
         };
 
-        const response = await fetch("https://localhost:7070/api/reservation/add", options);
+        const response = await fetch("https://localhost:7070/api/room/aviable-list", options);
         if (response.ok) {
             return await response.json();
         }
 
         return [];
-    }
-
-    const printDate = async () => {
-        console.log(calendarValue[0].toUTCString());
-        console.log(calendarValue[1].toUTCString());
     }
 
     return (
@@ -104,7 +98,7 @@ const Reservation = () => {
                         <form>
                             <div className="children input__Reservation">
                                 <label className="input-title">Взрослые</label>
-                                <select>
+                                <select value={adultsCount} onChange={adutlsHandle}>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -114,7 +108,7 @@ const Reservation = () => {
                             </div>
                             <div className="adult input__Reservation">
                                 <label className="input-title">Дети</label>
-                                <select>
+                                <select value={childrenCount} onChange={childrenHandle}>
                                     <option>0</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -134,7 +128,7 @@ const Reservation = () => {
                             ))}
                         </div>
 
-                        <button className="available-button" onClick={printDate} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
+                        <button className="available-button" onClick={getRoomsInfo} disabled={Object.keys(calendarValue).length < 2}>Доступные комнаты</button>
                     </div>
                 </div>
                 <div className="avialable-rooms">
@@ -149,13 +143,13 @@ const Reservation = () => {
                                         <span className="price-wrapper">от: <span className="price">{room.price} ₽</span></span>
                                         <span className="notice">Без учета налогов</span>
                                     </div>
-                                    <div className="reservation-button" onClick={openModal.bind(room.id)}><Button link="" text={"Забронировать"} /></div>
+                                    <div className="reservation-button" onClick={openModal.bind(this, room.id)}><Button link="" text={"Забронировать"} /></div>
                                 </div>
                             </li>
                         ))}
                     </ul>
                 </div>
-                <Modal active={modalActive} setActive={setModalActive} />
+                <Modal active={modalActive} setActive={setModalActive} roomID={roomID} dates={calendarValue} adults={adultsCount} children={childrenCount} />
             </div>
         </section>
     );

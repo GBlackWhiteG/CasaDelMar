@@ -30,6 +30,16 @@
             margin-bottom: 0.7em;
         }
 
+        .row-item {
+            display: flex;
+            gap: 50px;
+
+            .dates-subtitle {
+                color: #969696;
+                font-size: clamp(10px, 2vw, 14px);
+            }
+        }
+
         .inputs-item {
             display: flex;
             flex-direction: column;

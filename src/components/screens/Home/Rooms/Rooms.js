@@ -14,6 +14,7 @@ const Rooms = () => {
   const setBigImage = useCallback((i) => {
     window.localStorage.roomIndex = i;
     setImage(i);
+    console.log(window.localStorage.roomIndex);
   }, []);
 
   return (

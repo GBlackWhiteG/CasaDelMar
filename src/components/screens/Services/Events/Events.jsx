@@ -30,7 +30,7 @@ const Events = () => {
                 <h2>Мероприятия</h2>
                 <Slider className="slider" {...settings}>
                     <div className="slider-image-wrapper"><img src="/images/meetings.jpg" alt="встречи" /></div>
-                    <div className="slider-image-wrapper"><img src="/images/parties.jpgc" alt="вечеринки" /></div>
+                    <div className="slider-image-wrapper"><img src="/images/parties.jpg" alt="вечеринки" /></div>
                     <div className="slider-image-wrapper"><img src="/images/weddings.jpg" alt="свадьбы" /></div>
                 </Slider>
                 <div className="slider-text-wrapper"><p className="slider-text">{sliderText[sliderImageIndex]}</p></div>
