@@ -6,15 +6,11 @@ import Button from "../../../ui/Button/Button"
 import roomsInfo from '../../../services/importPicturesInfo'
 import scrollTop from "../../../services/scrollToTop"
 
-window.localStorage.roomIndex = 1;
-
 const Rooms = () => {
-  const [bigImage, setImage] = useState(window.localStorage.roomIndex);
+  const [bigImage, setImage] = useState(1);
 
   const setBigImage = useCallback((i) => {
-    window.localStorage.roomIndex = i;
     setImage(i);
-    console.log(window.localStorage.roomIndex);
   }, []);
 
   return (
@@ -38,7 +34,7 @@ const Rooms = () => {
           <h2>Комнаты</h2>
           <ul className='rooms-block'>
             {roomsInfo.map((room, index) => (
-              <li key={index} className={bigImage !== index ? "room" : "room active"} onClick={() => setBigImage(index)}>
+              <li key={index} className={bigImage !== index ? "room" : "room active"} onClick={setBigImage.bind(this, index)}>
                 <img src={room.src} alt='' />
                 <p>{room.name}</p>
               </li>
