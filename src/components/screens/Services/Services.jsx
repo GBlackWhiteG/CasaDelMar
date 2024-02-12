@@ -1,8 +1,9 @@
+import React from 'react';
 import Restaurants from './Restaurants/Restaurants'
 import Events from './Events/Events'
 import Experiences from './Experiences/Experiences'
 
-const Services = () => {
+const Services = React.memo(() => {
     return (
         <>
             <Restaurants />
@@ -10,6 +11,6 @@ const Services = () => {
             <Experiences />
         </>
     )
-}
+});
 
 export default Services;

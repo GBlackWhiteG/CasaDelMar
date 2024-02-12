@@ -103,6 +103,11 @@
                 @media (max-width: 1080px) {
                     max-width: 857px;
                 }
+
+                @media (max-width: 615px) {
+                    bottom: -80px;
+                    padding: 0;
+                }
             }
         }
     }

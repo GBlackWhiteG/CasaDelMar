@@ -25,6 +25,11 @@
 
             .item {
                 background-color: #ffffff;
+                transition: .2s;
+
+                &:hover {
+                    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+                }
 
                 .item-wrapper {  
                     height: 100%;

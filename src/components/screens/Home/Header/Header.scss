@@ -27,25 +27,6 @@
                 text-align: center;
                 position: relative;
             }
-
-            .title::before, .title::after {
-                font-family: "Lobster Two";
-                font-weight: normal;
-                font-size: clamp(25px, 3vw, 50px);
-                position: absolute;
-            }
-
-            .title::before {
-                content: "Santa Monica";
-                top: -35%;
-            }
-            
-            .title::after {
-                content: "California";
-                top: -35%;
-                
-                transform: translateX(-100%);
-            }
         }
     }
 

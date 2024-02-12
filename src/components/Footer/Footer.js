@@ -22,10 +22,10 @@ const Footer = () => {
           </div>
           <div className='footer-contacts'>
             <h4>Контакты</h4>
-            <span>Hotel Casa del Mar</span>
-            <a href='tel:3105815533'>(310) 581-5533</a>
-            <span>1910 Ocean Way</span>
-            <span>Santa Monica, California 90405 USA</span>
+            <span>Отель Casa del Mar</span>
+            <a href='tel:89154371523'>+7 (915) 437-15-23</a>
+            <span>Краснодарский край</span>
+            <span>Морской пер., 1 / 1Б, Сочи</span>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@ const Footer = () => {
         <div className='container'>
           <div className='bottom-footer'> 
             <span>© Все права защищены</span>
-            <a href='tel:8448801077'>(844) 880-1077</a>
+            <a href='tel:88622124315'>+7 (8622) 12-43-15</a>
           </div>
         </div>
       </div>

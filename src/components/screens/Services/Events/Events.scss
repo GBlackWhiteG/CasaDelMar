@@ -44,13 +44,15 @@
             }
 
             .slider-image-wrapper {
-                max-height: 700px;
-
                 img {
-                    max-height: 700px;
+                    max-height: 1000px;
                     width: 100%;
-                    object-fit: cover;
-                    object-position: 50% 50%;
+                    object-position: center;
+
+                    @media (max-width: 550px) {
+                        max-height: 700px;
+                        width: auto;
+                    }
                 }
             }
 

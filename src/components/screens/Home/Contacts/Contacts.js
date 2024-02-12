@@ -22,18 +22,18 @@ const Contacts = () => {
           <div className='wrapper__Contacts'>
             <div className='block__Contacts'>
               <YMaps>
-                <Map className="map" defaultState={{ center: [34.006716, -118.490716], zoom: 16 }} >
+                <Map className="map" defaultState={{ center: [43.576312, 39.723957], zoom: 16 }} >
                   <Placemark defaultGeometry={[34.006716, -118.490716]} />
                 </Map>
               </YMaps>
               <div className='content__Contacts'>
                 <h2>Контакты</h2>
-                <span>Hotel Casa del Mar</span>
-                <a href='tel:3105815533'>(310) 581-5533</a>
-                <span>1910 Ocean Way</span>
-                <span>Santa Monica, California 90405 USA</span>
+                <span>Отель Casa del Mar</span>
+                <a href='tel:89154371523'>+7 (915) 437-15-23</a>
+                <span>Краснодарский край</span>
+                <span>Морской пер., 1 / 1Б, Сочи</span>
                 <span className='subtitle'>Бронирование:</span>
-                <a href='tel:8448801077'>(844) 880-1077</a>
+                <a href='tel:88622123215'>+7 (8622) 12-43-15</a>
                 <a href='email:reservations@hotelcasadelmar.com'>reservations@hotelcasadelmar.com</a>
               </div>
             </div>

@@ -33,14 +33,16 @@
         }
 
         .collage-image {
-            max-width: 100%;
+            img {
+                max-width: 100%;
+            }
 
-            @media (max-width: 450px) {
+            @media (max-width: 550px) {
                 display: none;
             }
         }
 
-        @media (max-width: 450px) {
+        @media (max-width: 550px) {
             justify-content: center;
         }
     }
@@ -56,7 +58,7 @@
         background-color: #ffffff;
         z-index: -1;
 
-        @media (max-width: 450px) {
+        @media (max-width: 550px) {
             display: none;
         }
     }

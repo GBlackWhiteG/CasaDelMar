@@ -20,19 +20,19 @@ const Main = () => {
                                     <div className='properties-wrapper'>
                                         <ul className='properties-items'>
                                             <li className='item__properties center-item'>
-                                                <span className='property'>1</span>
+                                                <span className='property'>{room.bedrooms}</span>
                                                 <span className='property-text'>спальня</span>
                                             </li>
                                             <li className='item__properties'>
-                                                <span className='property'>37</span>
+                                                <span className='property'>{room.square}</span>
                                                 <span className='property-text'>кв. м</span>
                                             </li>
                                             <li className='item__properties'>
-                                                <span className='property'>1</span>
+                                                <span className='property'>{room.bed}</span>
                                                 <span className='property-text'>кровать</span>
                                             </li>
                                         </ul>
-                                        <span className='price-wrapper'>от: <span className='price'>55767 ₽</span></span>
+                                        <span className='price-wrapper'>от: <span className='price'>{room.price} ₽</span></span>
                                     </div>
                                 </div>
                             </Link> 
