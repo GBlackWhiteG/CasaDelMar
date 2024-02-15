@@ -3,11 +3,16 @@ import "./Modal.scss";
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css'
 
-const reservateRoom = async (id, dates) => {
+const reservateRoom = async (id, dates, fullname, email, phoneNumber, adultsCount, childrenCount) => {
     const request = {
-        roomID: id,
+        fullname: fullname,
+        email: email,
+        phoneNumber: phoneNumber, 
+        adultsCount: adultsCount,
+        childrenCount: childrenCount,
         startTime: String(dates[0].toUTCString()),
-        endTime: String(dates[1].toUTCString())
+        endTime: String(dates[1].toUTCString()),
+        roomID: id
     }
 
     const headers = new Headers();
@@ -33,9 +38,20 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
         setPhoneNumber(value);
     }
 
+    const [inputName, setName] = useState("");
+    const [inputEmail, setEmail] = useState("");
+
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    }
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    }
+
     return (
         <div className={active ? 'Modal' : 'Modal active'} onClick={() => setActive(true)}>
-            <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={reservateRoom.bind(this, roomID, dates)} onClick={e => {e.stopPropagation();}}>
+            <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={reservateRoom.bind(this, roomID, dates, inputName, inputEmail, phoneNumber, adults, children)} onClick={e => {e.stopPropagation();}}>
                 <h4>Забронировать комнату</h4>
                 <div className='row-item'>
                     <div className='inputs-item'>
@@ -53,11 +69,21 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                 </div>
                 <div className="inputs-item">
                     <label>ФИО</label>
-                    <input type='text' required />
+                    <input
+                        type='text'
+                        value={inputName}
+                        onChange={handleNameChange}
+                        required
+                    />
                 </div>
                 <div className="inputs-item">
                     <label>Почта</label>
-                    <input type='email' required />
+                    <input
+                        type='email'
+                        value={inputEmail}
+                        onChange={handleEmailChange}
+                        required
+                    />
                 </div>
                 <div className="inputs-item">
                     <label>Номер телефона</label>
