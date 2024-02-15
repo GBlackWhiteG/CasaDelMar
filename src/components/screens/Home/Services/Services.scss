@@ -104,6 +104,40 @@
                         opacity: 1;
                     }
                 }
+
+                @media (max-width: 768px) {
+                    img {
+                        filter: none;
+                    }
+
+                    .item-bg {
+                        transform: translateY(0%)
+                    }
+    
+                    .item-wrapper {
+                        height: 50%;
+                        transform: translateY(0%);
+                    }
+
+                    &:active {
+                        img {
+                            filter: brightness(40%);
+                        }
+                
+                        .item-bg {
+                            transform: translateY(0%);
+                        }
+                
+                        .item-wrapper {
+                            height: 50%;
+                            transform: translateY(-50%);
+                        
+                            p, .more-button {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
             }
 
             @media (max-width: 560px) {

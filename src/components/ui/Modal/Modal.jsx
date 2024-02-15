@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Modal.scss";
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css'
 
 const reservateRoom = async (id, dates) => {
     const request = {
@@ -25,6 +27,12 @@ const reservateRoom = async (id, dates) => {
 }
 
 const Modal = ({active, setActive, roomID, dates, adults, children}) => {
+    const [phoneNumber, setPhoneNumber] = useState();
+
+    const handelPhoneChange = (value) => {
+        setPhoneNumber(value);
+    }
+
     return (
         <div className={active ? 'Modal' : 'Modal active'} onClick={() => setActive(true)}>
             <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={reservateRoom.bind(this, roomID, dates)} onClick={e => {e.stopPropagation();}}>
@@ -53,7 +61,11 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                 </div>
                 <div className="inputs-item">
                     <label>Номер телефона</label>
-                    <input type='tel' required />
+                    <PhoneInput 
+                        value={phoneNumber}
+                        onChange={handelPhoneChange}
+                        countrySelectComponent={({ country, onCountryChange }) => null}
+                    />
                 </div>
                 <div className="checkbox-block">
                     <input type='checkbox' id="data" required />

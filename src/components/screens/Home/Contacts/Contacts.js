@@ -23,7 +23,7 @@ const Contacts = () => {
             <div className='block__Contacts'>
               <YMaps>
                 <Map className="map" defaultState={{ center: [43.576312, 39.723957], zoom: 16 }} >
-                  <Placemark defaultGeometry={[34.006716, -118.490716]} />
+                  <Placemark defaultGeometry={[43.576312, 39.723957]} />
                 </Map>
               </YMaps>
               <div className='content__Contacts'>

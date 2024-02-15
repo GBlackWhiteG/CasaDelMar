@@ -137,7 +137,7 @@ const Reservation = () => {
                         {roomsInfo.map(room => (
                             <li key={room.id} className="item">
                                 <div><img src={room.photoURL} alt='' /></div>
-                                <div className="item-content"> 
+                                <div className="item-content">
                                     <h4>{room.name}</h4>
                                     <div className="price-block">
                                         <span className="price-wrapper">от: <span className="price">{room.price} ₽</span></span>

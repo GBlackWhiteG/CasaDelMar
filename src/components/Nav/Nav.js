@@ -21,9 +21,9 @@ const Nav = () => {
                         isWindowTop(true);
                     }
                 }
-          });
+            });
         }
-      });
+    });
 
     return (
         <>

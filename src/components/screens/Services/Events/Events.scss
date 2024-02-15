@@ -44,8 +44,9 @@
             }
 
             .slider-image-wrapper {
+                max-height: 800px;
+
                 img {
-                    max-height: 1000px;
                     width: 100%;
                     object-position: center;
 
