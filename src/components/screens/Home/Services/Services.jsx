@@ -21,7 +21,7 @@ const Services = () => {
         <h2>Услуги и удобства</h2>
         <div className='items__Services'>
           <div className='item__Services'>
-            <img src="/images/eat.jpg" alt='Ешь и развлекайся' />
+          <div className='image-wrapper'><img src="/images/eat.jpg" alt='Ешь и развлекайся' /></div>
             <div className='item-bg'></div>
             <div className='item-wrapper'>
               <h4>Ешь и развлекайся</h4>
@@ -30,7 +30,7 @@ const Services = () => {
             </div>
           </div>
           <div className='item__Services'>
-            <img src="/images/events.jpg" alt='Планировать мероприятия' />
+          <div className='image-wrapper'><img src="/images/events.jpg" alt='Планировать мероприятия' /></div>
             <div className='item-bg'></div>
             <div className='item-wrapper'>
               <h4>Планировать мероприятия</h4>
@@ -39,7 +39,7 @@ const Services = () => {
             </div>
           </div>
           <div className='item__Services'>
-            <img src="/images/where-are-we.jpg" alt='Где мы процветаем' />
+            <div className='image-wrapper'><img src="/images/where-are-we.jpg" alt='Где мы процветаем' /></div>
             <div className='item-bg'></div>
             <div className='item-wrapper'>
               <h4>Где мы процветаем</h4>

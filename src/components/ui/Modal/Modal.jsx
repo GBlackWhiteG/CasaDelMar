@@ -5,14 +5,14 @@ import 'react-phone-number-input/style.css'
 
 const reservateRoom = async (id, dates, fullname, email, phoneNumber, adultsCount, childrenCount) => {
     const request = {
+        roomID: id,
         fullname: fullname,
         email: email,
         phoneNumber: phoneNumber, 
         adultsCount: adultsCount,
         childrenCount: childrenCount,
         startTime: String(dates[0].toUTCString()),
-        endTime: String(dates[1].toUTCString()),
-        roomID: id
+        endTime: String(dates[1].toUTCString())
     }
 
     const headers = new Headers();
@@ -51,7 +51,7 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
 
     return (
         <div className={active ? 'Modal' : 'Modal active'} onClick={() => setActive(true)}>
-            <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={reservateRoom.bind(this, roomID, dates, inputName, inputEmail, phoneNumber, adults, children)} onClick={e => {e.stopPropagation();}}>
+            <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={reservateRoom.bind(this, roomID, dates, inputName, inputEmail, phoneNumber, adults, children)} onClick={e => e.stopPropagation()}>
                 <h4>Забронировать комнату</h4>
                 <div className='row-item'>
                     <div className='inputs-item'>

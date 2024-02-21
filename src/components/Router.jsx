@@ -13,16 +13,18 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Nav />
-            <Routes>
-                <Route element={<Home />} path="/" />
-                <Route element={<Rooms />} path="/rooms" />
-                <Route element={<Room />} path="/rooms/:id" />
-                <Route element={<Services />} path="/services" />
-                <Route element={<Offers />} path="/offers" />
-                <Route element={<Reservation />} path="/reservation" />
+            <main>
+                <Routes>
+                    <Route element={<Home />} path="/" />
+                    <Route element={<Rooms />} path="/rooms" />
+                    <Route element={<Room />} path="/rooms/:id" />
+                    <Route element={<Services />} path="/services" />
+                    <Route element={<Offers />} path="/offers" />
+                    <Route element={<Reservation />} path="/reservation" />
 
-                <Route path="*" element={<h1>Not found</h1>} />
-            </Routes>
+                    <Route path="*" element={<h1>Not found</h1>} />
+                </Routes>
+            </main>
             <Footer />
         </BrowserRouter>
     )
