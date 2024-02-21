@@ -133,6 +133,7 @@ const Reservation = () => {
                 </div>
                 <div className="avialable-rooms">
                     <h3>Доступные комнаты</h3>
+                    <div className={roomsInfo.length !== 0 ? 'preloader-wrapper show-preloader' : 'preloader-wrapper'}><img className="preloader" src="./svg/Spinner.svg" alt="preloader" /></div>
                     <ul className="items">
                         {roomsInfo.map(room => (
                             <li key={room.id} className="item">

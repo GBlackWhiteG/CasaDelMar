@@ -83,6 +83,25 @@
                 margin-bottom: 30px;
             }
 
+            .preloader-wrapper {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .preloader {
+                    max-width: 100%;
+                }
+            }
+
+            .show-preloader {
+                display: block;
+
+                .preloader {
+                    display: none;
+                }
+            }
+
             @media (max-width: 1200px) {
                 max-width: 750px;
                 margin: 0 auto;
