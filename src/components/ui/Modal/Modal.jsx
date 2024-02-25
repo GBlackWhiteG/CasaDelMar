@@ -3,7 +3,11 @@ import "./Modal.scss";
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css'
 
-const reservateRoom = async (id, dates, fullname, email, phoneNumber, adultsCount, childrenCount) => {
+const reservateRoom = async (e, id, dates, fullname, email, phoneNumber, adultsCount, childrenCount, toggleStatus, toggleResonseStatus) => {
+    e.preventDefault();
+
+    toggleStatus(true);
+    
     const request = {
         roomID: id,
         fullname: fullname,
@@ -25,9 +29,13 @@ const reservateRoom = async (id, dates, fullname, email, phoneNumber, adultsCoun
 
     const response = await fetch("https://localhost:7070/api/reservation/add", options);
     if (response.ok) {
+        toggleResonseStatus("OK");
+        setTimeout(()=> this.setState({showDefaultLoader: false}), 3000);
+        window.location.reload();
         return await response.json();
     }
 
+    toggleResonseStatus("ERROR");
     return [];
 }
 
@@ -49,9 +57,21 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
         setEmail(e.target.value);
     }
 
+    const [waitStatus, changeStatus] = useState(false);
+
+    const toggleStatus = (status) => {
+        changeStatus(status);
+    }
+
+    const [resonseStatus, changeResonseStatus] = useState("None");
+
+    const toggleResonseStatus = (answer) => {
+        changeResonseStatus(answer);
+    }
+
     return (
-        <div className={active ? 'Modal' : 'Modal active'} onClick={() => setActive(true)}>
-            <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={reservateRoom.bind(this, roomID, dates, inputName, inputEmail, phoneNumber, adults, children)} onClick={e => e.stopPropagation()}>
+        <div className={active ? 'Modal' : 'Modal active'} onClick={() => {setActive(true); toggleStatus(false); toggleResonseStatus('None')}}>
+            <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={(e) => reservateRoom(e, roomID, dates, inputName, inputEmail, phoneNumber, adults, children, toggleStatus, toggleResonseStatus)} onClick={e => e.stopPropagation()}>
                 <h4>Забронировать комнату</h4>
                 <div className='row-item'>
                     <div className='inputs-item'>
@@ -98,6 +118,10 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                     <label htmlFor="data">Я согласен на обработку моих персональных данных</label>
                 </div>
                 <div><input type='submit' className='submit-button' value="Отправить" /></div>
+
+                <div className={waitStatus ? 'wait-page wait-page__active' : 'wait-page'}>
+                    <span className='response-answer'>{resonseStatus}</span>
+                </div>
             </form>
         </div>
     );
