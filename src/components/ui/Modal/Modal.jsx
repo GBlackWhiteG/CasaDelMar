@@ -29,14 +29,30 @@ const reservateRoom = async (e, id, dates, fullname, email, phoneNumber, adultsC
 
     const response = await fetch("https://localhost:7070/api/reservation/add", options);
     if (response.ok) {
-        toggleResonseStatus("OK");
-        setTimeout(()=> this.setState({showDefaultLoader: false}), 3000);
-        window.location.reload();
+        toggleResonseStatus("ok");
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
         return await response.json();
     }
 
-    toggleResonseStatus("ERROR");
+    toggleResonseStatus("bad");
     return [];
+}
+
+const answerInfo = {
+    'wait': {
+        'src': "/svg/wait.svg",
+        'text': "Пожалуйста подождите"
+    },
+    'ok': {
+        'src': "/svg/ok.svg",
+        'text': "Окно будет закрыто через 3 секунды"
+    },
+    'bad': {
+        'src': "/svg/bad.svg",
+        'text': "Окно будет закрыто через 3 секунды"
+    }
 }
 
 const Modal = ({active, setActive, roomID, dates, adults, children}) => {
@@ -63,14 +79,14 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
         changeStatus(status);
     }
 
-    const [resonseStatus, changeResonseStatus] = useState("None");
+    const [resonseStatus, changeResonseStatus] = useState("wait");
 
     const toggleResonseStatus = (answer) => {
         changeResonseStatus(answer);
     }
 
     return (
-        <div className={active ? 'Modal' : 'Modal active'} onClick={() => {setActive(true); toggleStatus(false); toggleResonseStatus('None')}}>
+        <div className={active ? 'Modal' : 'Modal active'} onClick={() => {setActive(true); toggleStatus(false); toggleResonseStatus('wait')}}>
             <form className={active ? 'content__modal' : 'content__modal active-content__modal'} onSubmit={(e) => reservateRoom(e, roomID, dates, inputName, inputEmail, phoneNumber, adults, children, toggleStatus, toggleResonseStatus)} onClick={e => e.stopPropagation()}>
                 <h4>Забронировать комнату</h4>
                 <div className='row-item'>
@@ -120,7 +136,8 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                 <div><input type='submit' className='submit-button' value="Отправить" /></div>
 
                 <div className={waitStatus ? 'wait-page wait-page__active' : 'wait-page'}>
-                    <span className='response-answer'>{resonseStatus}</span>
+                    <img src={answerInfo[resonseStatus]['src']} />
+                    <span className='response-answer'>{answerInfo[resonseStatus]['text']}</span>
                 </div>
             </form>
         </div>

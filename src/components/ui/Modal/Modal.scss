@@ -23,6 +23,7 @@
         transform: scale(0);
         transition: .3s;
         position: relative;
+        margin: 0 20px;
 
         h4 {
             font-family: "Times New Roman";
@@ -87,6 +88,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             opacity: 0;
             background-color: #ffffff;
             pointer-events: none;
@@ -96,8 +98,17 @@
             z-index: 0;
             transition: .3s;
 
+            img {
+                max-width: 200px;
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
             .response-answer {
-                font-size: 25px;
+                width: 300px;
+                text-align: center;
+                font-size: clamp(20px, 2vw, 25px);
+                margin: 0 10px;
             }
         }
         
