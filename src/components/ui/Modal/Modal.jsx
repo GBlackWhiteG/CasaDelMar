@@ -27,7 +27,7 @@ const reservateRoom = async (e, id, dates, fullname, email, phoneNumber, adultsC
         body: JSON.stringify(request)
     };
 
-    const response = await fetch("https://localhost:7070/api/reservation/add", options);
+    const response = await fetch("https://a25288-b2fa.u.d-f.pw/api/reservation/add", options);
     if (response.ok) {
         toggleResonseStatus("ok");
         setTimeout(() => {
