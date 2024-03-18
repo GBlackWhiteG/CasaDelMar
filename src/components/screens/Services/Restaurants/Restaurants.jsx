@@ -14,7 +14,7 @@ const Restaurants = React.memo(() => {
                 <div className='content-block'>
                     <div className='left-block'>
                         <div className='image-wrapper'>
-                            <img src="/images/terrazza.jpg" />
+                            <div className="image-block"><img src="/images/terrazza.jpg" alt="terrazza" /></div>
                             <div className='content'>
                                 <h3>Терразза</h3>
                                 <p>За пределами плиты величественная архитектура Терраццы открывает захватывающие виды на Черное море с высокими стенами с окнами, которые создают захватывающее впечатление от морского побережья, открывая очаровательную береговую линию Сочи.</p>
@@ -23,7 +23,7 @@ const Restaurants = React.memo(() => {
                     </div>
                     <div className='right-block'>
                         <div className='image-wrapper'>
-                            <img src="/images/lobby-laundg.jpg" />
+                            <div><img src="/images/lobby-laundg.jpg" alt="lobby-layndg" /></div>
                             <div className='content reversed'>
                                 <h3>Лобби-лаундж</h3>
                                 <p>Наш величественный лаундж в вестибюле с видом на Черное море сочетает в себе неподвластную времени элегантность и роскошную пляжную обстановку. </p>
@@ -32,7 +32,7 @@ const Restaurants = React.memo(() => {
                     </div>
                     <div className='left-block'>
                         <div className='image-wrapper'>
-                            <img src="/images/patio-del-mar.jpg" />
+                            <div><img src="/images/patio-del-mar.jpg" alt="patio" /></div>
                             <div className='content'>
                                 <h3>Морепродукты Bistro</h3>
                                 <p>Наше новое бистро на свежем воздухе Patio del Mar занимает место в первом ряду у подножия знаменитого отеля Casa del Mar. В нескольких шагах от пляжа это идеальное место для летнего обеда или ужина на закате с друзьями.</p>
