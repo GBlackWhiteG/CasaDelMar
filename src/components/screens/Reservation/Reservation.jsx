@@ -34,7 +34,7 @@ const Reservation = () => {
 
     useEffect(() => {
         getRoomsInfo();
-    }, []);
+    }, [calendarValue]);
 
     const openModal = (id) => {
         setRoomID(id);

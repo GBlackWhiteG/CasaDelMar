@@ -109,6 +109,8 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                         type='text'
                         value={inputName}
                         onChange={handleNameChange}
+                        maxLength={255}
+                        minLength={8}
                         required
                     />
                 </div>

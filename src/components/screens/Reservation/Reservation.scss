@@ -68,11 +68,15 @@
                     border: none;
                     background-color: #3C6F84;
                     padding: 0.63em 1.25em;
-
+                    transition: .3s;
                 }    
                 .available-button:disabled {
                     background-color: gray;
                     cursor: default;
+                }
+
+                .available-button:hover {
+                    transform: scale(0.95);
                 }
             }
         }
@@ -177,7 +181,7 @@
                             padding: 0.63em 1.25em;
 
                             &:hover {
-                                transform: none;
+                                transform: scale(0.95);
                                 box-shadow: none;
                             }
                 
