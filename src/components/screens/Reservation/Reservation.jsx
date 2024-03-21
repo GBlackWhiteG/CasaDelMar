@@ -68,7 +68,7 @@ const Reservation = () => {
             body: JSON.stringify(request)
         };
 
-        const response = await fetch("https://a25288-b2fa.u.d-f.pw/api/room/aviable-list", options);
+        const response = await fetch("a25288-b2fa.u.d-f.pw/api/room/list", options);
         if (response.ok) {
             return await response.json();
         }

@@ -104,7 +104,7 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                     <span>Дети: {children}</span>
                 </div>
                 <div className="inputs-item">
-                    <label>ФИО</label>
+                    <label>ФИО*</label>
                     <input
                         type='text'
                         value={inputName}
@@ -115,7 +115,7 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                     />
                 </div>
                 <div className="inputs-item">
-                    <label>Почта</label>
+                    <label>Почта*</label>
                     <input
                         type='email'
                         value={inputEmail}
@@ -124,11 +124,12 @@ const Modal = ({active, setActive, roomID, dates, adults, children}) => {
                     />
                 </div>
                 <div className="inputs-item">
-                    <label>Номер телефона</label>
+                    <label>Номер телефона*</label>
                     <PhoneInput 
                         value={phoneNumber}
                         onChange={handelPhoneChange}
                         countrySelectComponent={({ country, onCountryChange }) => null}
+                        required
                     />
                 </div>
                 <div className="checkbox-block">
